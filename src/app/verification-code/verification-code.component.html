@@ -1,34 +1,4 @@
-<!-- login.component.html -->
-<!-- <div class="position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-75 d-flex justify-content-center align-items-center z-3">
-    <div class="bg-black text-white p-4 rounded-4 shadow-lg" style="width: 100%; max-width: 550px; height: 550px;"> -->
-      
-      <!-- X logo and close -->
-      <!-- <div class="text-center mb-3">
-        <span class="fs-2 fw-bold">𝕏</span>
-      </div> -->
-  
-      <!-- Title -->
-      <!-- <h4 class="fw-bold text-white mb-3 ms-5">We send you a code</h4>
-
-      <p class=" mb-3 ms-5 email">Enter it below to verify mohamedukkasha24gmail.com</p> -->
-  
-      <!-- Login Form -->
-
-      <!-- <div class="form-floating mb-3 ms-5 w-75">
-        <input type="text" class="form-control custom-black-input" id="floatingInput" placeholder="">
-        <label for="floatingInput" class="blue-label">Verfication code</label>
-        <a href="" class="anchor">Didn't receive email?</a>
-      </div>
-  
-      <button class="btn btn-light w-75 rounded-pill ms-5 mt-5 " (click)="setPassword()">Next</button>
-
-    </div>
-  </div> -->
-  
-
-
-
-  <div class="position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+<div class="position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-75 d-flex justify-content-center align-items-center z-3">
     <div class="bg-black text-white p-4 rounded-4 shadow-lg w-100" style="max-width: 550px; height: auto;">
   
       <!-- X logo and close -->
@@ -39,17 +9,17 @@
       <!-- Title -->
       <div class="px-3 px-md-5">
         <h4 class="fw-bold mb-3">We sent you a code</h4>
-        <p class="email mb-3">Enter it below to verify mohamedukkasha24gmail.com</p>
+        <p class="email mb-3">Enter it below to verify {{ email }}</p>
   
         <!-- Input Field -->
         <div class="form-floating mb-2">
-          <input type="text" class="form-control custom-black-input" id="floatingInput" placeholder="">
+          <input type="text" class="form-control custom-black-input" id="floatingInput" placeholder="" [(ngModel)]="enteredCode">
           <label for="floatingInput" class="blue-label">Verification code</label>
           <a href="#" class="anchor d-block mt-1">Didn't receive email?</a>
         </div>
   
         <!-- Button -->
-        <button class="btn btn-light w-100 rounded-pill mt-4" (click)="setPassword()">Next</button>
+        <button class="btn btn-light w-100 rounded-pill mt-4" (click)="verifyCode()">Next</button>
       </div>
   
     </div>

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-sign-in',
   imports: [CommonModule,RouterLink],
@@ -10,12 +10,12 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class SignInComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router , private authservice:AuthService) {}
 
 goToSignup() {
   this.router.navigate(['/inside-sign-up']); // Make sure /signup route exists
 }
-  closeModal() {
-    // Logic to hide modal (routing or conditional rendering)
-  }
+signInWithGoogle(){
+  this.authservice.signInWithGoogle()
+}
 }
