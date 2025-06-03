@@ -1,0 +1,87 @@
+.margin{
+    margin-left: 260px;
+    font-size: 21px;
+}
+
+.margin_2{
+
+   width: 600px;
+   margin-right: 90px;
+}
+.inputbox{
+    width: 360px;
+}
+.subscribetopremium{
+    width: 360px;
+    border-radius: 10px;
+}
+.subscribetopremium h5{
+    font-weight: bold;
+}
+.subscribetopremium p{
+    font-size: 14px;
+}
+.whatshappening{
+    width: 360px;
+    border-radius: 10px;
+}
+.whatshappening p {
+    margin-bottom: 0;
+}
+.showpost{
+    height: 40px;
+}
+h6 img{
+    border-radius: 50%;
+}
+.patcumminsimg{
+    border-radius: 20px;
+}
+#sunriseblur {
+    font-size: 0.85rem;  
+    filter: blur(0.3px);
+    opacity: 0.6;
+}
+.textbottom{
+    font-size: 0.85rem;  
+    filter: blur(0.3px);
+    opacity: 0.6;
+}
+.commenticons{
+    font-size: 0.85rem;  
+    filter: blur(0.3px);
+    opacity: 0.6;
+}
+.textwhathappening{
+    filter: blur(0.3px);
+    opacity: 0.6;
+}
+.textcolor{
+    font-size: 0.95rem;  
+    filter: blur(0.3px);
+    opacity: 0.6;
+}
+.marginsize{
+    margin-left: 140px;
+    
+}
+
+
+.dropdown-menu-custom {
+    width: 220px;
+    z-index: 1000;
+    border: 1px solid #555;
+  }
+  .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+  
+  .boderradius{
+    border-radius: 25px;
+}
+input::placeholder {
+    color: white;
+    opacity: 1; /* Optional: make sure it's fully opaque */
+    font-size: 13.5px;
+}

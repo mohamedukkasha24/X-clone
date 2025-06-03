@@ -1,0 +1,144 @@
+<div class="container-fluid vh-100 bg-black text-white">
+    <div class="row">
+        <div class="col">
+            <div class="d-flex flex-column align-items-start p-3 gap-3 margin">
+                <h3 class="fs-4">X</h3>
+                <nav class="d-flex flex-column gap-2 ">
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToHome()" style="cursor: pointer;"><i class="bi bi-house-door-fill"></i> Home</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToExplore()" style="cursor: pointer;"><i class="bi bi-search"></i> Explore</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToNotification()" style="cursor: pointer;"><i class="bi bi-bell"></i>
+                        Notifications</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToMessage()" style="cursor: pointer;"><i class="bi bi-chat-dots"></i> Messages</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;" (click)="goToGrok()"><i class="bi bi-claude"></i> Grok</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;" (click)="goToList()"><i class="bi bi-card-list"></i>Lists</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToBookmarks()" style="cursor: pointer;"><i class="bi bi-bookmark"></i> Bookmarks</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToJobs()" style="cursor: pointer;"><i class="bi bi-briefcase"></i> Jobs</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;"><i class="bi bi-people"></i> Communities</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToPremium()" style="cursor: pointer;"><i class="bi bi-twitter-x"></i>Premium</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;" (click)="goToVerifiedOrgs()"><i class="bi bi-lightning"></i>Verified
+                        Orgs</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;" (click)="goToProfile()"><i class="bi bi-person"></i> Profile</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;"><i class="bi bi-three-dots"></i> More</a>
+                </nav>
+                <button class="btn btn-light rounded-pill w-100">Post</button>
+            </div>
+        </div>
+        <div class="col-6 vh-100 border border-secondary border-top-0  border-bottom-0  margin_2">
+            <div class="row border border-secondary border-top-0">
+                <h5 class="mt-2">Notifications</h5>
+                <div class="d-flex justify-content-between mb-2 mt-2">
+                    <span class="textcolor">All</span>
+                    <span class="textcolor">Verified</span>
+                    <span class="textcolor">Mentions</span>
+                </div>
+            </div>
+            <div class="row text-center mt-2 ">
+                <h3 style="text-align: justify;" class="marginsize">Nothing to see here — <br> yet</h3>
+                <p class="textcolor marginsize" style="text-align: justify;">From likes to reposts and a whole lot more,
+                    this <br> is where all the action happens.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row mb-4">
+                <div class="inputbox mt-1">
+                    <input type="email" class="form-control bg-black text-white boderradius border border-dark-subtle"
+                        id="exampleInputEmail1" placeholder="Search">
+                </div>
+            </div>
+            <div class="row border border-secondary p-3 rounded whatshappening">
+                <h5 class="mb-3">What's happening?</h5>
+
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted text-secondary-emphasis">Trending in India</span>
+                    <span class="text-muted text-secondary-emphasis">...</span>
+                </div>
+                <p>#Monsoon2025</p><br>
+                <span class="text-muted text-secondary-emphasis">2,675 posts</span>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <span class="text-muted text-secondary-emphasis">Sports.trending</span>
+                    <span class="text-muted text-secondary-emphasis">...</span>
+                </div>
+                <p>#PBKSvsMI</p><br>
+                <span class="text-muted text-secondary-emphasis">3,078 posts</span>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <span class="text-muted text-secondary-emphasis">Trending in India</span>
+                    <span class="text-muted text-secondary-emphasis">...</span>
+                </div>
+                <p>CRPF</p><br>
+                <span class="text-muted text-secondary-emphasis">4,825 posts</span>
+                <a href="" class="text-decoration-none mt-2">show more</a>
+            </div>
+
+            <div class="row border border-secondary p-3 rounded whatshappening mt-4">
+                <h5 class="mb-3">Who to follow </h5>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="">
+                            <h6 class="mb-0 d-flex align-items-center gap-1">
+                                <img src="/images/sunrisers-hyderabad-logo-png_seeklogo-352074.png" alt="" width="30px"
+                                    height="30px">
+                                SunRisers Hyderabad
+                                <img src="/images/instagram-blue-tik.png" alt="" width="15px" height="15px"><br>
+                            </h6>
+                            <p class="ms-4 textbottom">&#64;SunRisers</p>
+                        </div>
+                    </div>
+                    <div class="col  ">
+                        <button class="btn btn-light" style="border-radius: 20px;">follow</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <div class="">
+                            <h6 class="mb-0 d-flex align-items-center gap-1">
+                                <img src="/images/Rohit sharma png image_1696594471_1721824723.webp" alt="" width="30px"
+                                    height="30px">
+                                Rohit Sharma
+                                <img src="/images/instagram-blue-tik.png" alt="" width="15px" height="15px"><br>
+                            </h6>
+                            <p class="ms-4 textbottom">&#64;hitman</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-light" style="border-radius: 20px;">follow</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <div class="">
+                            <h6 class="mb-0 d-flex align-items-center gap-1">
+                                <img src="/images/logo.png" alt="" width="30px" height="30px">
+                                Sun Pictures
+                                <img src="/images/instagram-blue-tik.png" alt="" width="15px" height="15px"><br>
+                            </h6>
+                            <p class="ms-4 textbottom">&#64;sunpictures</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-light" style="border-radius: 20px;">follow</button>
+                    </div>
+                </div>
+                <a href="" class="text-decoration-none mt-2">show more</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>

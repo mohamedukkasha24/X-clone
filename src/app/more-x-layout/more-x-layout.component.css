@@ -1,0 +1,22 @@
+.more-popup {
+    position: absolute;
+    left: 90px; /* adjust as needed */
+    bottom: 100px; /* adjust to align above "Post" button */
+    background-color: #000;
+    color: #fff;
+    width: 240px;
+    z-index: 9999;
+  }
+  
+  .menu-item {
+    padding: 10px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+  
+  .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  

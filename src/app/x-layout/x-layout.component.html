@@ -1,0 +1,221 @@
+<div class="container-fluid vh-100 vw-100 bg-black text-white">
+    <div class="row">
+        <div class="col">
+            <div class="d-flex flex-column align-items-start p-3 gap-3 margin">
+                <h3 class="fs-4">X</h3>
+                <nav class="d-flex flex-column gap-2 ">
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToHome()" style="cursor: pointer;"><i class="bi bi-house-door-fill"></i> Home</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToExplore()" style="cursor: pointer;"><i class="bi bi-search"></i> Explore</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToNotification()" style="cursor: pointer;"><i class="bi bi-bell"></i>
+                        Notifications</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToMessage()" style="cursor: pointer;"><i class="bi bi-chat-dots"></i> Messages</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;" (click)="goToGrok()"><i class="bi bi-claude"></i> Grok</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;" (click)="goToList()"><i class="bi bi-card-list" ></i>Lists</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToBookmarks()" style="cursor: pointer;"><i class="bi bi-bookmark"></i> Bookmarks</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToJobs()" style="cursor: pointer;"><i class="bi bi-briefcase"></i> Jobs</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;"><i class="bi bi-people"></i> Communities</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        (click)="goToPremium()" style="cursor: pointer;"><i class="bi bi-twitter-x"></i>Premium</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer; " (click)="goToVerifiedOrgs()"><i class="bi bi-lightning"></i>Verified
+                        Orgs</a>
+                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                        style="cursor: pointer;" (click)="goToProfile()"><i class="bi bi-person"></i> Profile</a>
+                        <div class="position-relative d-inline-block" (click)="toggleDropdown()">
+                            <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                                style="cursor: pointer;">
+                                <i class="bi bi-three-dots"></i> More
+                            </a>
+    
+                            <!-- Dropdown menu (visible when dropdownVisible = true) -->
+                            <div *ngIf="dropdownVisible" class="dropdown-menu-top bg-dark text-white p-4 rounded"
+                                style="position: absolute; bottom: 100%; left: 0; z-index: 1000; width: max-content;">
+                                <div class="menu-item p-1"><i class="bi bi-cash-coin me-2"></i>Monetization</div>
+                                <div class="menu-item p-1"><i class="bi bi-image me-2"></i>Ads</div>
+                                <div class="menu-item p-1"><i class="bi bi-mic me-2"></i>Create your Space</div>
+                                <div class="menu-item p-1"><i class="bi bi-gear me-2"></i>Settings and privacy</div>
+                            </div>
+                        </div>
+                </nav>
+                <button class="btn btn-light rounded-pill w-100">Post</button>
+            </div>
+        </div>
+        <div class="col-6 vh-100 border-start border-end border-secondary margin_2" style="border-bottom: none;">
+
+            <div class="row text-center mt-3">
+                <div class="col pb-2">For you</div>
+                <div class="col pb-2">Following</div>
+            </div>
+            <div class="row border border-secondary ">
+                <div class="row">
+                    <p class="fs-3">
+                        <i class="bi bi-person-circle"></i>
+                        <span class="fs-4 ps-2 textwhathappening">whats happaning?</span>
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <p class="d-flex justify-content-between"><i class="bi bi-image-fill"></i> <span><i
+                                    class="bi bi-filetype-gif"></i></span> <span><i
+                                    class="bi bi-claude"></i></span><span><i class="bi bi-bar-chart-line"></i></span>
+                            <span><i class="bi bi-emoji-smile-fill"></i></span> <span><i class="bi bi-table"></i></span>
+                            <span><i class="bi bi-geo-alt"></i></span>
+                        </p>
+                    </div>
+                    <div class="col d-flex justify-content-end mb-2"><button
+                            class="btn btn-secondary w-50 rounded-pill">Post</button></div>
+                </div>
+
+
+
+            </div>
+            <div class="row border border-secondary border-top-0 showpost d-flex align-items-center">
+                <a href="" class="text-center text-decoration-none ">Show 70 Post</a>
+            </div>
+            <div class="row border border-secondary border-top-0">
+                <div class="">
+
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0 d-flex align-items-center gap-1">
+                            <img src="/images/sunrisers-hyderabad-logo-png_seeklogo-352074.png" alt="" width="30px"
+                                height="30px">
+                            SunRisers Hyderabad
+                            <img src="/images/instagram-blue-tik.png" alt="" width="15px" height="15px">
+                            <span id="sunriseblur">&#64;SunRisers-16h</span>
+                        </h6>
+                        <span>...</span>
+                    </div>
+
+                    <p><a href="" class="text-decoration-none ms-4">#OrangeArmy</a>,it may be our last game of the
+                        season,
+                        but revenge is always <br>sweet &#129296; .</p>
+                    <p class="ms-4">Pat Cummins | <a href="" class="text-decoration-none">#PlayWithFire</a> | <a href=""
+                            class="text-decoration-none">#SRHvKKR</a>| <a href=""
+                            class="text-decoration-none">#TATAIPL2025</a></p>
+                    <img src="/images/batcummins.jpeg" alt="" width="350px" height="400px" class="patcumminsimg ms-4">
+                    <div class="d-flex align-items-center gap-5 w-100 ms-5 commenticons mt-1">
+                        <span><i class="bi bi-chat"></i>&nbsp;&nbsp;3.8k</span>
+                        <span><i class="bi bi-arrow-down-up"></i>&nbsp;30k</span>
+                        <span><i class="bi bi-heart"></i>&nbsp;49k</span>
+                        <span><i class="bi bi-bar-chart-line"></i>&nbsp;2.9M</span>
+
+
+                        <div class="d-flex justify-content-end">
+                            <span><i class="bi bi-bookmark"></i></span>
+                            <span><i class="bi bi-download"></i></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="row mb-4">
+                <div class="inputbox mt-1">
+                    <input type="email" class="form-control border border-dark-subtle bg-black text-white boderradius"
+                        id="exampleInputEmail1" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="row border border-secondary mb-4 subscribetopremium">
+                <h5 class="mt-1">Subscribe to Premium</h5>
+                <p>Subscribe to unlock new features and if <br> eligible, receive a share of revenue.</p>
+                <button class="btn btn-primary w-25 rounded-pill ms-2 mb-2">Sunscribe</button>
+            </div>
+
+            <div class="row border border-secondary p-3 rounded whatshappening">
+                <h5 class="mb-3">What's happening?</h5>
+
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted text-secondary-emphasis">Trending in India</span>
+                    <span class="text-muted text-secondary-emphasis">...</span>
+                </div>
+                <p>#Monsoon2025</p><br>
+                <span class="text-muted text-secondary-emphasis">2,675 posts</span>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <span class="text-muted text-secondary-emphasis">Sports.trending</span>
+                    <span class="text-muted text-secondary-emphasis">...</span>
+                </div>
+                <p>#PBKSvsMI</p><br>
+                <span class="text-muted text-secondary-emphasis">3,078 posts</span>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <span class="text-muted text-secondary-emphasis">Trending in India</span>
+                    <span class="text-muted text-secondary-emphasis">...</span>
+                </div>
+                <p>CRPF</p><br>
+                <span class="text-muted text-secondary-emphasis">4,825 posts</span>
+                <a href="" class="text-decoration-none mt-2">show more</a>
+            </div>
+
+            <div class="row border border-secondary p-3 rounded whatshappening mt-4">
+                <h5 class="mb-3">Who to follow </h5>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="">
+                            <h6 class="mb-0 d-flex align-items-center gap-1">
+                                <img src="/images/sunrisers-hyderabad-logo-png_seeklogo-352074.png" alt="" width="30px"
+                                    height="30px">
+                                SunRisers Hyderabad
+                                <img src="/images/instagram-blue-tik.png" alt="" width="15px" height="15px"><br>
+                            </h6>
+                            <p class="ms-4 textbottom">&#64;SunRisers</p>
+                        </div>
+                    </div>
+                    <div class="col  ">
+                        <button class="btn btn-light" style="border-radius: 20px;">follow</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <div class="">
+                            <h6 class="mb-0 d-flex align-items-center gap-1">
+                                <img src="/images/Rohit sharma png image_1696594471_1721824723.webp" alt="" width="30px"
+                                    height="30px">
+                                Rohit Sharma
+                                <img src="/images/instagram-blue-tik.png" alt="" width="15px" height="15px"><br>
+                            </h6>
+                            <p class="ms-4 textbottom">&#64;hitman</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-light" style="border-radius: 20px;">follow</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <div class="">
+                            <h6 class="mb-0 d-flex align-items-center gap-1">
+                                <img src="/images/logo.png" alt="" width="30px" height="30px">
+                                Sun Pictures
+                                <img src="/images/instagram-blue-tik.png" alt="" width="15px" height="15px"><br>
+                            </h6>
+                            <p class="ms-4 textbottom">&#64;sunpictures</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-light" style="border-radius: 20px;">follow</button>
+                    </div>
+                </div>
+                <a href="" class="text-decoration-none mt-2">show more</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>

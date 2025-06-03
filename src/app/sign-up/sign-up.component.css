@@ -1,0 +1,47 @@
+/* .modal-content {
+    min-width: 600px;
+    background-color: #000;
+    color: #fff;
+    height: 650px;
+  }
+  
+  input::placeholder,
+  select {
+    color: #aaa;
+  } */
+
+
+  .modal-content {
+    background-color: #000;
+    color: #fff;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  input::placeholder,
+  select {
+    color: #aaa;
+  }
+  
+  @media (max-width: 767.98px) {
+    .modal-content {
+      border-radius: 0;
+      padding: 2rem 1rem;
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .form-control,
+    .form-select {
+      font-size: 0.95rem;
+    }
+  
+    .text-end.small {
+      text-align: right !important;
+    }
+  }
+  

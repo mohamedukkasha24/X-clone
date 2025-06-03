@@ -1,0 +1,10 @@
+.jobs-page {
+    background-color: #000;
+    min-height: 100vh;
+  }
+  
+  .search-box {
+    cursor: pointer;
+    color: #ccc;
+  }
+  
