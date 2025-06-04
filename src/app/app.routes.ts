@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { XAuthComponent } from './x-auth/x-auth.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignUpWithGoogleComponent } from './sign-up-with-google/sign-up-with-google.component';
-import { SignUpWithAppleComponent } from './sign-up-with-apple/sign-up-with-apple.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { InsideSignUpComponent } from './inside-sign-up/inside-sign-up.component';
 import { VerificationCodeComponent } from './verification-code/verification-code.component';
@@ -25,10 +23,6 @@ export const routes: Routes = [
     { path: '', component: XAuthComponent },
     // { path: '**', redirectTo: '' },
     {path : 'sign-up' , component : SignUpComponent},
-
-    {path :'sign-up-with-google' , component : SignUpWithGoogleComponent},
-
-    { path : 'sign-up-with-apple' , component : SignUpWithAppleComponent},
 
     { path : 'sign-in' , component : SignInComponent},
 

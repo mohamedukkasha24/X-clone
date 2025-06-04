@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-
+import { HttpClient } from '@angular/common/http';
+import { Auth } from '@angular/fire/auth';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-sign-up',
   imports: [CommonModule, FormsModule, RouterLink],
@@ -10,7 +12,11 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './sign-up.component.css',
 })
 export class SignUpComponent {
-  constructor(private verifycode: Router, private router: Router) {
+  constructor(
+    private verifycode: Router,
+    private router: Router,
+    private authService: AuthService
+  ) {
     const data: any = localStorage.getItem('users');
     console.log('Hi', JSON.parse(data));
   }
@@ -20,14 +26,28 @@ export class SignUpComponent {
   // }
   name = '';
   email = '';
+  password = '';
   dobMonth = '';
   dobDay = '';
   dobYear = '';
+  otpSent = false;
+  otp = '';
+  phoneNumber = '';
+  verificationId: string = '';
   days = Array.from({ length: 31 }, (_, i) => i + 1);
   years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
   // You can add a password field visually later
 
   registerUser() {
+    this.authService
+      .signUp(this.email, this.password)
+      .then(() => {
+        alert('Check your inbox for the verification email!');
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+
     if (!this.name || !this.email) {
       alert('Name and Email are required!');
       return;
@@ -66,6 +86,7 @@ export class SignUpComponent {
     const newUser = {
       name: this.name,
       email: this.email,
+      password: this.password,
       dob: `${this.dobMonth} ${this.dobDay}, ${this.dobYear}`,
     };
 
@@ -75,8 +96,6 @@ export class SignUpComponent {
 
     alert('Account created successfully!');
     this.router.navigate(['/verification-code']);
-
-    
 
     const verificationCode = Math.floor(100000 + Math.random() * 900000); // 6-digit
 
