@@ -3,11 +3,11 @@
     font-size: 21px;
 }
 
-/* .margin_2{
+.margin_2{
 
-   width: 800px;
-   margin-right: 40px;
-} */
+   width: 600px;
+   margin-right: 90px;
+}
 .inputbox{
     width: 360px;
 }
@@ -56,19 +56,20 @@ h6 img{
     filter: blur(0.3px);
     opacity: 0.6;
 }
-.margin_2{
-    min-width:350px;
-}
-.marginsize{
-    margin-left: 40px;
-    
-}
 .textcolor{
-    font-size: 0.80rem;  
+    font-size: 0.95rem;  
     filter: blur(0.3px);
     opacity: 0.6;
 }
-.centered{
-    margin-left: 250px;
-    margin-top: 300px;
+.marginsize{
+    margin-left: 140px;
+    
+}
+.boderradius{
+    border-radius: 25px;
+}
+input::placeholder {
+    color: white;
+    opacity: 1; /* Optional: make sure it's fully opaque */
+    font-size: 13.5px;
 }
