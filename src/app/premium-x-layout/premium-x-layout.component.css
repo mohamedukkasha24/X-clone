@@ -1,24 +1,4 @@
-/* h1{
-    font-size: 64px;
-}
-.enjoytext{
-    filter: blur(0.3px);
-    opacity: 0.7;
-}
-.radius{
-    border-radius: 20px;
-}
-.limited{
-    font-size: 0.85rem;
-    filter: blur(0.3px);
-    opacity: 0.7;
-}
-.fontalign{
-    font-size: 13px;
-    font-weight: bold;
-} */
-
-.card {
+ .card {
     border-radius: 1rem;
     padding: 1rem;
     background-color: #1a1a1a;

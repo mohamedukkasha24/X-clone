@@ -1,17 +1,3 @@
-/* input::placeholder {
-    color: #999;
-  }
-  
-  .btn {
-    font-weight: 500;
-  }
-  
-  body {
-    overflow: hidden;
-  }
-  .pointer{
-    cursor: pointer;
-  } */
 
   input::placeholder {
     color: #999;

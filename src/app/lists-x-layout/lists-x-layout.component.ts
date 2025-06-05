@@ -8,7 +8,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class ListsXLayoutComponent {
   constructor ( private homepage:Router ,private explorepage : Router , private notificationpage : Router , private messagepage :Router , private bookmarkpage : Router,private jobpage : Router,private premiumpage : Router,
-    private verifiedorgspage : Router, private profilepage : Router, private listpage  : Router , private grokpage : Router
+    private verifiedorgspage : Router, private profilepage : Router, private listpage  : Router , private grokpage : Router , private communitiespage : Router
   ){}
 
 
@@ -47,6 +47,10 @@ goToPremium(){
 
 goToVerifiedOrgs(){
   this.verifiedorgspage.navigate(["verifiedorgs"])
+}
+
+goToCommunities(){
+  this.communitiespage.navigate(['communities'])
 }
 
 goToProfile(){

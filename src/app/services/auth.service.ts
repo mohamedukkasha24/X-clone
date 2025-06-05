@@ -5,13 +5,14 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
 } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor(private xlayoutpage : Router) {}
   private auth: Auth = inject(Auth);
 
   signInWithGoogle() {
@@ -19,7 +20,9 @@ export class AuthService {
     signInWithPopup(this.auth, provider)
       .then((result) => {
         console.log('Signed in:', result.user);
+        
         // Navigate to another route or save user info
+        this.xlayoutpage.navigate(['x-layout'])
       })
       .catch((error) => {
         console.error(' Sign-in error:', error);

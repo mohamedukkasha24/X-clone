@@ -5,67 +5,77 @@ import { Router, RouterLink } from '@angular/router';
   selector: 'app-profile-x-layout',
   imports: [CommonModule],
   templateUrl: './profile-x-layout.component.html',
-  styleUrl: './profile-x-layout.component.css'
+  styleUrl: './profile-x-layout.component.css',
 })
 export class ProfileXLayoutComponent {
-  constructor ( private homepage:Router ,private explorepage : Router , private notificationpage : Router , private messagepage :Router , private bookmarkpage : Router, private jobpage :Router,private premiumpage:Router,
-    private verifiedorgspage : Router , private listpage : Router , private grokpage : Router
-  ){}
+  constructor(
+    private homepage: Router,
+    private explorepage: Router,
+    private notificationpage: Router,
+    private messagepage: Router,
+    private bookmarkpage: Router,
+    private jobpage: Router,
+    private premiumpage: Router,
+    private verifiedorgspage: Router,
+    private listpage: Router,
+    private grokpage: Router,
+    private communitiespage: Router
+  ) {}
 
-
-
-  goToHome(){
-      this.homepage.navigate(['x-layout']);
+  goToHome() {
+    this.homepage.navigate(['x-layout']);
   }
 
-  goToExplore(){
-        this.explorepage.navigate(["explore"]);
+  goToExplore() {
+    this.explorepage.navigate(['explore']);
   }
 
-  goToNotification(){
-       this.notificationpage.navigate(["notifications"])
+  goToNotification() {
+    this.notificationpage.navigate(['notifications']);
   }
 
-  goToMessage(){
-    this.messagepage.navigate(["messages"])
-}
+  goToMessage() {
+    this.messagepage.navigate(['messages']);
+  }
 
- //private grokpage : Router
- goToGrok(){
-  this.grokpage.navigate(["grok"])
- }
+  //private grokpage : Router
+  goToGrok() {
+    this.grokpage.navigate(['grok']);
+  }
 
-goToBookmarks(){
-  this.bookmarkpage.navigate(["bookmarks"])
-}
+  goToBookmarks() {
+    this.bookmarkpage.navigate(['bookmarks']);
+  }
 
-goToJobs(){
-  this.jobpage.navigate(["jobs"])
-}
+  goToJobs() {
+    this.jobpage.navigate(['jobs']);
+  }
 
-goToPremium(){
-  this.premiumpage.navigate(["premium"]);
-}
+  goToPremium() {
+    this.premiumpage.navigate(['premium']);
+  }
 
-goToVerifiedOrgs(){
-  this.verifiedorgspage.navigate(["verifiedorgs"])
-}
+  goToVerifiedOrgs() {
+    this.verifiedorgspage.navigate(['verifiedorgs']);
+  }
 
-goToList(){
-  this.listpage.navigate(['list'])
- }
+  goToList() {
+    this.listpage.navigate(['list']);
+  }
 
+  showMoreMenu = false;
 
- showMoreMenu = false;
+  toggleMoreMenu() {
+    this.showMoreMenu = !this.showMoreMenu;
+  }
 
- toggleMoreMenu() {
-   this.showMoreMenu = !this.showMoreMenu;
- }
+  goToCommunities() {
+    this.communitiespage.navigate(['communities']);
+  }
 
- dropdownVisible = false;
+  dropdownVisible = false;
 
-toggleDropdown() {
-  this.dropdownVisible = !this.dropdownVisible;
-}
-
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
 }

@@ -75,48 +75,5 @@ input::placeholder {
   opacity: 1; /* Optional: make sure it's fully opaque */
   font-size: 13.5px;
 }
-/* Remove fixed margins, widths */
-/* .margin {
-    margin-left: 260px;
-    font-size: 21px;
-  }
-  
-  @media (max-width: 768px) {
-    .margin {
-      margin-left: 0;
-      font-size: 18px;
-    }
-  
-    .margin_2 {
-      width: 100%;
-      margin-right: 0;
-    }
-  
-    .inputbox,
-    .subscribetopremium,
-    .whatshappening {
-      width: 100% !important;
-    }
-  
-    .commenticons {
-      gap: 1rem;
-      font-size: 0.75rem;
-    }
-  
-    .patcumminsimg {
-      width: 100% !important;
-      height: auto !important;
-    }
-  
-    .textwhathappening,
-    .textbottom,
-    #sunriseblur {
-      font-size: 0.8rem;
-    }
-  
-    .showpost {
-      height: auto;
-      text-align: center;
-    }
-  } */
+
   

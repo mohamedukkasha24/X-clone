@@ -6,7 +6,6 @@ import { InsideSignUpComponent } from './inside-sign-up/inside-sign-up.component
 import { VerificationCodeComponent } from './verification-code/verification-code.component';
 import { PasswordSetupComponent } from './password-setup/password-setup.component';
 import { XLayoutComponent } from './x-layout/x-layout.component';
-import { HomeXLayoutComponent } from './home-x-layout/home-x-layout.component';
 import { ExploreXLayoutComponent } from './explore-x-layout/explore-x-layout.component';
 import { NotificationsXLayoutComponent } from './notifications-x-layout/notifications-x-layout.component';
 import { MessagesXLayoutComponent } from './messages-x-layout/messages-x-layout.component';
@@ -18,6 +17,7 @@ import { VerifiedorgsXLayoutComponent } from './verifiedorgs-x-layout/verifiedor
 import { ProfileXLayoutComponent } from './profile-x-layout/profile-x-layout.component';
 import { MoreXLayoutComponent } from './more-x-layout/more-x-layout.component';
 import { ListsXLayoutComponent } from './lists-x-layout/lists-x-layout.component';
+import { CommunitiesXLayoutComponent } from './communities-x-layout/communities-x-layout.component';
 
 export const routes: Routes = [
     { path: '', component: XAuthComponent },
@@ -33,8 +33,6 @@ export const routes: Routes = [
     { path : 'password-setup' , component : PasswordSetupComponent},
 
     { path : 'x-layout' , component : XLayoutComponent},
-
-    { path : 'home' , component : HomeXLayoutComponent},
 
     { path : 'explore' , component : ExploreXLayoutComponent},
 
@@ -56,7 +54,9 @@ export const routes: Routes = [
     
     { path : 'more' , component : MoreXLayoutComponent},
 
-    { path : 'list' , component : ListsXLayoutComponent}
+    { path : 'list' , component : ListsXLayoutComponent},
+
+    { path : 'communities' , component : CommunitiesXLayoutComponent}
 
 
 ];

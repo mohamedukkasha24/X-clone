@@ -19,7 +19,6 @@ export class VerificationCodeComponent {
     this.password.navigate(['/password-setup']);
   }
 
-
   enteredCode = '';
 
   verifyCode() {
@@ -32,5 +31,4 @@ export class VerificationCodeComponent {
       alert('Invalid verification code');
     }
   }
-
 }

@@ -1,70 +1,83 @@
 import { CommonModule } from '@angular/common';
-import { Component,HostListener  } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-x-layout',
   imports: [CommonModule],
   templateUrl: './x-layout.component.html',
-  styleUrl: './x-layout.component.css'
+  styleUrl: './x-layout.component.css',
 })
 export class XLayoutComponent {
-   constructor ( private homepage:Router ,private explorepage : Router , private notificationpage : Router , private messagepage : Router , private bookmarkpage : Router , private jobpage: Router, private premiumpage : Router, private verifiedorgspage : Router, private profilepage : Router, private morepage : Router,
-    private listpage : Router , private grokpage : Router
-   ){}
+  constructor(
+    private homepage: Router,
+    private explorepage: Router,
+    private notificationpage: Router,
+    private messagepage: Router,
+    private bookmarkpage: Router,
+    private jobpage: Router,
+    private premiumpage: Router,
+    private verifiedorgspage: Router,
+    private profilepage: Router,
+    private morepage: Router,
+    private listpage: Router,
+    private grokpage: Router,
+    private communitiespage: Router
+  ) {}
 
+  goToHome() {
+    this.homepage.navigate(['x-layout']);
+  }
 
+  goToExplore() {
+    this.explorepage.navigate(['explore']);
+  }
 
-   goToHome(){
-       this.homepage.navigate(['x-layout']);
-   }
+  goToNotification() {
+    this.notificationpage.navigate(['notifications']);
+  }
 
-   goToExplore(){
-         this.explorepage.navigate(["explore"]);
-   }
+  goToMessage() {
+    this.messagepage.navigate(['messages']);
+  }
+  //private grokpage : Router
+  goToGrok() {
+    this.grokpage.navigate(['grok']);
+  }
 
-   goToNotification(){
-        this.notificationpage.navigate(["notifications"])
-   }
+  goToBookmarks() {
+    this.bookmarkpage.navigate(['bookmarks']);
+  }
 
-   goToMessage(){
-        this.messagepage.navigate(["messages"])
-   }
-   //private grokpage : Router
-   goToGrok(){
-    this.grokpage.navigate(["grok"])
-   }
+  goToJobs() {
+    this.jobpage.navigate(['jobs']);
+  }
 
-   goToBookmarks(){
-         this.bookmarkpage.navigate(["bookmarks"])
-   }
+  goToPremium() {
+    this.premiumpage.navigate(['premium']);
+  }
 
-   goToJobs(){
-       this.jobpage.navigate(["jobs"])
-   }
+  goToVerifiedOrgs() {
+    this.verifiedorgspage.navigate(['verifiedorgs']);
+  }
 
-   goToPremium(){
-       this.premiumpage.navigate(["premium"]);
-   }
+  goToProfile() {
+    this.profilepage.navigate(['profile']);
+  }
 
-   goToVerifiedOrgs(){
-         this.verifiedorgspage.navigate(["verifiedorgs"])
-   }
+  goToCommunities() {
+    this.communitiespage.navigate(['communities']);
+  }
+  goToMore() {
+    this.morepage.navigate(['more']);
+  }
 
-   goToProfile(){
-       this.profilepage.navigate(['profile'])
-   }
+  goToList() {
+    this.listpage.navigate(['list']);
+  }
+  dropdownVisible = false;
 
-   goToMore(){
-       this.morepage.navigate(['more'])
-   }
-
-   goToList(){
-    this.listpage.navigate(['list'])
-   }
-   dropdownVisible = false;
-
-   toggleDropdown() {
-     this.dropdownVisible = !this.dropdownVisible;
-   }
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
 }
