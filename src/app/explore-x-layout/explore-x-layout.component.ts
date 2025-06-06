@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-explore-x-layout',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './explore-x-layout.component.html',
   styleUrl: './explore-x-layout.component.css',
 })
@@ -63,5 +64,11 @@ export class ExploreXLayoutComponent {
 
   goToList() {
     this.listpage.navigate(['list']);
+  }
+
+  dropdownVisible = false;
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
   }
 }

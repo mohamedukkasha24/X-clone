@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-grok-x-layout',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './grok-x-layout.component.html',
   styleUrl: './grok-x-layout.component.css',
 })
@@ -67,5 +68,11 @@ export class GrokXLayoutComponent {
   }
   goToList() {
     this.listpage.navigate(['list']);
+  }
+
+  dropdownVisible = false;
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
   }
 }

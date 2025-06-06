@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-lists-x-layout',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './lists-x-layout.component.html',
   styleUrl: './lists-x-layout.component.css'
 })
@@ -59,5 +60,10 @@ goToProfile(){
 
 goToList(){
   this.listpage.navigate(['list'])
+ }
+ dropdownVisible = false;
+
+ toggleDropdown() {
+   this.dropdownVisible = !this.dropdownVisible;
  }
 }

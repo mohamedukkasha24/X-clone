@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-messages-x-layout',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './messages-x-layout.component.html',
   styleUrl: './messages-x-layout.component.css',
 })
@@ -68,5 +69,10 @@ export class MessagesXLayoutComponent {
   }
   goToList() {
     this.listpage.navigate(['list']);
+  }
+  dropdownVisible = false;
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
   }
 }

@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-bookmarks-x-layout',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './bookmarks-x-layout.component.html',
   styleUrl: './bookmarks-x-layout.component.css',
 })
@@ -66,5 +67,11 @@ export class BookmarksXLayoutComponent {
 
   goToList() {
     this.listpage.navigate(['list']);
+  }
+
+  dropdownVisible = false;
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
   }
 }

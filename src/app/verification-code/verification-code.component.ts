@@ -16,7 +16,7 @@ export class VerificationCodeComponent {
   }
   constructor(private password: Router) {}
   setPassword() {
-    this.password.navigate(['/password-setup']);
+    this.password.navigate(['/x-layout']);
   }
 
   enteredCode = '';
@@ -24,8 +24,8 @@ export class VerificationCodeComponent {
   verifyCode() {
     const savedCode = localStorage.getItem('verificationCode');
     if (this.enteredCode === savedCode) {
+      this.password.navigate(['/x-layout']);
       alert('Verification successful!');
-      this.password.navigate(['/password-setup']);
       // Navigate or do next step
     } else {
       alert('Invalid verification code');

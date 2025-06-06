@@ -104,7 +104,7 @@ export class SignUpComponent {
     console.log('Sent verification code:', verificationCode); // Simulate sending
 
     alert(`Verification code sent to ${this.email}`); // In real apps, send via email/SMS
-    localStorage.setItem('signupPassword', this.password);
+    // localStorage.setItem('signupPassword', this.password);
     this.router.navigate(['/verification-code']);
   }
 }
