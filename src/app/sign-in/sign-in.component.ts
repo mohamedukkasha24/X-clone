@@ -5,41 +5,40 @@ import { AuthService } from '../services/auth.service';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-sign-in',
-  imports: [CommonModule,RouterLink,FormsModule],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './sign-in.component.html',
-  styleUrl: './sign-in.component.css'
+  styleUrl: './sign-in.component.css',
 })
 export class SignInComponent {
-
-  constructor(private router: Router , private authservice:AuthService , private xlayout : Router) {}
-
+  constructor(
+    private router: Router,
+    private authservice: AuthService,
+    private xlayout: Router
+  ) {}
 
   email = '';
-password = '';
+  password = '';
 
+  goToXlayout() {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const foundUser = users.find((user: any) => user.email === this.email);
 
+    if (!foundUser) {
+      alert('Email not found. Please sign up.');
+      return;
+    }
 
-goToXlayout(){
-  const users = JSON.parse(localStorage.getItem('users') || '[]');
-  const foundUser = users.find((user: any) => user.email === this.email);
+    if (foundUser.password !== this.password) {
+      alert('Incorrect password. Please try again.');
+      return;
+    }
 
-  if (!foundUser) {
-    alert('Email not found. Please sign up.');
-    return;
+    // Success
+    alert('Login successful!');
+    this.xlayout.navigate(['x-layout']);
   }
 
-  if (foundUser.password !== this.password) {
-    alert('Incorrect password. Please try again.');
-    return;
+  goToSignup() {
+    this.router.navigate(['/inside-sign-up']); // Make sure /signup route exists
   }
-
-  // Success
-  alert('Login successful!');
-  this.xlayout.navigate(['x-layout']);
-}
-
-goToSignup() {
-  this.router.navigate(['/inside-sign-up']); // Make sure /signup route exists
-}
-
 }

@@ -20,43 +20,41 @@ import { ListsXLayoutComponent } from './lists-x-layout/lists-x-layout.component
 import { CommunitiesXLayoutComponent } from './communities-x-layout/communities-x-layout.component';
 
 export const routes: Routes = [
-    { path: '', component: XAuthComponent },
-    // { path: '**', redirectTo: '' },
-    {path : 'sign-up' , component : SignUpComponent},
+  { path: '', component: XAuthComponent },
+  // { path: '**', redirectTo: '' },
+  { path: 'sign-up', component: SignUpComponent },
 
-    { path : 'sign-in' , component : SignInComponent},
+  { path: 'sign-in', component: SignInComponent },
 
-    { path : 'inside-sign-up' , component : InsideSignUpComponent},
+  { path: 'inside-sign-up', component: InsideSignUpComponent },
 
-    { path : 'verification-code' , component : VerificationCodeComponent},
+  { path: 'verification-code', component: VerificationCodeComponent },
 
-    { path : 'password-setup' , component : PasswordSetupComponent},
+  { path: 'password-setup', component: PasswordSetupComponent },
 
-    { path : 'x-layout' , component : XLayoutComponent},
+  { path: 'x-layout', component: XLayoutComponent },
 
-    { path : 'explore' , component : ExploreXLayoutComponent},
+  { path: 'explore', component: ExploreXLayoutComponent },
 
-    { path : 'notifications' , component : NotificationsXLayoutComponent},
+  { path: 'notifications', component: NotificationsXLayoutComponent },
 
-    { path : 'messages' , component : MessagesXLayoutComponent},
+  { path: 'messages', component: MessagesXLayoutComponent },
 
-    { path : 'grok' , component : GrokXLayoutComponent},
+  { path: 'grok', component: GrokXLayoutComponent },
 
-    { path : 'bookmarks' , component : BookmarksXLayoutComponent},
+  { path: 'bookmarks', component: BookmarksXLayoutComponent },
 
-    { path : 'jobs' , component : JobsXLayoutComponent},
+  { path: 'jobs', component: JobsXLayoutComponent },
 
-    { path : 'premium' , component:PremiumXLayoutComponent},
+  { path: 'premium', component: PremiumXLayoutComponent },
 
-    { path : 'verifiedorgs' , component : VerifiedorgsXLayoutComponent },
+  { path: 'verifiedorgs', component: VerifiedorgsXLayoutComponent },
 
-    { path : 'profile' , component : ProfileXLayoutComponent} ,
-    
-    { path : 'more' , component : MoreXLayoutComponent},
+  { path: 'profile', component: ProfileXLayoutComponent },
 
-    { path : 'list' , component : ListsXLayoutComponent},
+  { path: 'more', component: MoreXLayoutComponent },
 
-    { path : 'communities' , component : CommunitiesXLayoutComponent}
+  { path: 'list', component: ListsXLayoutComponent },
 
-
+  { path: 'communities', component: CommunitiesXLayoutComponent },
 ];

@@ -31,21 +31,21 @@
                         Orgs</a>
                     <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
                         style="cursor: pointer;" (click)="goToProfile()"><i class="bi bi-person"></i> Profile</a>
-                        <div class="position-relative d-inline-block" (click)="toggleDropdown()">
-                            <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                                style="cursor: pointer;">
-                                <i class="bi bi-three-dots"></i> More
-                            </a>
-    
-                            <!-- Dropdown menu (visible when dropdownVisible = true) -->
-                            <div *ngIf="dropdownVisible" class="dropdown-menu-top bg-dark text-white p-4 rounded"
-                                style="position: absolute; bottom: 100%; left: 0; z-index: 1000; width: max-content;">
-                                <div class="menu-item p-1"><i class="bi bi-cash-coin me-2"></i>Monetization</div>
-                                <div class="menu-item p-1"><i class="bi bi-image me-2"></i>Ads</div>
-                                <div class="menu-item p-1"><i class="bi bi-mic me-2"></i>Create your Space</div>
-                                <div class="menu-item p-1"><i class="bi bi-gear me-2"></i>Settings and privacy</div>
-                            </div>
+                    <div class="position-relative d-inline-block" (click)="toggleDropdown()">
+                        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+                            style="cursor: pointer;">
+                            <i class="bi bi-three-dots"></i> More
+                        </a>
+
+                        <!-- Dropdown menu (visible when dropdownVisible = true) -->
+                        <div *ngIf="dropdownVisible" class="dropdown-menu-top bg-dark text-white p-4 rounded"
+                            style="position: absolute; bottom: 100%; left: 0; z-index: 1000; width: max-content;">
+                            <div class="menu-item p-1"><i class="bi bi-cash-coin me-2"></i>Monetization</div>
+                            <div class="menu-item p-1"><i class="bi bi-image me-2"></i>Ads</div>
+                            <div class="menu-item p-1"><i class="bi bi-mic me-2"></i>Create your Space</div>
+                            <div class="menu-item p-1"><i class="bi bi-gear me-2"></i>Settings and privacy</div>
                         </div>
+                    </div>
                 </nav>
                 <button class="btn btn-light rounded-pill w-100">Post</button>
             </div>

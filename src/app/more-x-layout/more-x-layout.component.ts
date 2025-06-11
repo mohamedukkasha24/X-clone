@@ -5,7 +5,7 @@ import { Component, HostListener } from '@angular/core';
   selector: 'app-more-x-layout',
   imports: [CommonModule],
   templateUrl: './more-x-layout.component.html',
-  styleUrl: './more-x-layout.component.css'
+  styleUrl: './more-x-layout.component.css',
 })
 export class MoreXLayoutComponent {
   showPopup = false;
@@ -20,7 +20,8 @@ export class MoreXLayoutComponent {
 
   @HostListener('document:click', ['$event.target'])
   onClickOutside(target: HTMLElement) {
-    const clickedInside = target.closest('.more-popup') || target.closest('button');
+    const clickedInside =
+      target.closest('.more-popup') || target.closest('button');
     if (!clickedInside) {
       this.closePopup();
     }

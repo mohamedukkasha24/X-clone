@@ -5,23 +5,25 @@ import { AuthService } from '../services/auth.service';
   selector: 'app-inside-sign-up',
   imports: [RouterLink],
   templateUrl: './inside-sign-up.component.html',
-  styleUrl: './inside-sign-up.component.css'
+  styleUrl: './inside-sign-up.component.css',
 })
 export class InsideSignUpComponent {
-  constructor(private router: Router,private createAccountPage:Router, private authservice:AuthService) {}
+  constructor(
+    private router: Router,
+    private createAccountPage: Router,
+    private authservice: AuthService
+  ) {}
 
-  gotosigninpage(){
-
+  gotosigninpage() {
     this.router.navigate(['/sign-in']);
   }
- 
 
   createAccount() {
-   this.createAccountPage.navigate(['/sign-up'])
+    this.createAccountPage.navigate(['/sign-up']);
   }
-   
-  signInWithGoogle(){
-    this.authservice.signInWithGoogle()
+
+  signInWithGoogle() {
+    this.authservice.signInWithGoogle();
   }
 
   //test

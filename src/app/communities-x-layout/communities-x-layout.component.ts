@@ -5,7 +5,7 @@ import { Router, RouterLink } from '@angular/router';
   selector: 'app-communities-x-layout',
   imports: [CommonModule],
   templateUrl: './communities-x-layout.component.html',
-  styleUrl: './communities-x-layout.component.css'
+  styleUrl: './communities-x-layout.component.css',
 })
 export class CommunitiesXLayoutComponent {
   constructor(

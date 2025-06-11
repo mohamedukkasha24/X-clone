@@ -1,17 +1,12 @@
 <!-- More button -->
 <button class="btn text-white d-flex align-items-center bg-dark" (click)="togglePopup()">
-    <i class="bi bi-three-dots fs-4"></i>
-  </button>
-  
-  <!-- Popup Menu -->
-  <div
-    class="more-popup shadow-lg rounded-4 p-2"
-    *ngIf="showPopup"
-    (clickOutside)="closePopup()"
-  >
-    <div class="menu-item"><i class="bi bi-cash-coin me-2"></i>Monetization</div>
-    <div class="menu-item"><i class="bi bi-image me-2"></i>Ads</div>
-    <div class="menu-item"><i class="bi bi-mic me-2"></i>Create your Space</div>
-    <div class="menu-item"><i class="bi bi-gear me-2"></i>Settings and privacy</div>
-  </div>
-  
+  <i class="bi bi-three-dots fs-4"></i>
+</button>
+
+<!-- Popup Menu -->
+<div class="more-popup shadow-lg rounded-4 p-2" *ngIf="showPopup" (clickOutside)="closePopup()">
+  <div class="menu-item"><i class="bi bi-cash-coin me-2"></i>Monetization</div>
+  <div class="menu-item"><i class="bi bi-image me-2"></i>Ads</div>
+  <div class="menu-item"><i class="bi bi-mic me-2"></i>Create your Space</div>
+  <div class="menu-item"><i class="bi bi-gear me-2"></i>Settings and privacy</div>
+</div>
