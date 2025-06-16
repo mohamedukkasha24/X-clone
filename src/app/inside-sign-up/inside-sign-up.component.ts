@@ -25,6 +25,4 @@ export class InsideSignUpComponent {
   signInWithGoogle() {
     this.authservice.signInWithGoogle();
   }
-
-  //test
 }

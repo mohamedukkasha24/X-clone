@@ -28,11 +28,6 @@ export class PasswordSetupComponent {
       return;
     }
 
-    // if (this.enteredPassword.length < 8) {
-    //   alert('Password must be at least 8 characters long');
-    //   return;
-    // }
-
     if (this.enteredPassword === originalPassword) {
       this.router.navigate(['/x-layout']);
     } else {

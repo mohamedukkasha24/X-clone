@@ -3,6 +3,15 @@ import { Component, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormsModule } from '@angular/forms';
+import {
+  Firestore,
+  doc,
+  setDoc,
+  getDocs,
+  collection,
+  query,
+  where,
+} from '@angular/fire/firestore';
 @Component({
   selector: 'app-sign-in',
   imports: [CommonModule, RouterLink, FormsModule],
@@ -13,29 +22,37 @@ export class SignInComponent {
   constructor(
     private router: Router,
     private authservice: AuthService,
-    private xlayout: Router
+    private xlayout: Router,
+    private firestore: Firestore
   ) {}
 
   email = '';
   password = '';
 
   goToXlayout() {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const foundUser = users.find((user: any) => user.email === this.email);
-
-    if (!foundUser) {
-      alert('Email not found. Please sign up.');
+    if (!this.email || !this.password) {
+      alert('Please enter both email and password.');
       return;
     }
 
-    if (foundUser.password !== this.password) {
-      alert('Incorrect password. Please try again.');
-      return;
-    }
+    this.authservice
+      .login(this.email, this.password)
+      .then(() => {
+        // Login successful — Navigate to x-layout
+        this.xlayout.navigate(['x-layout']);
+      })
+      .catch(async (error) => {
+        // If login failed, check if the email exists in Firestore
+        const usersRef = collection(this.firestore, 'joinees details');
+        const q = query(usersRef, where('email', '==', this.email));
+        const querySnapshot = await getDocs(q);
 
-    // Success
-    alert('Login successful!');
-    this.xlayout.navigate(['x-layout']);
+        if (!querySnapshot.empty) {
+          alert('Incorrect password.');
+        } else {
+          alert('Please Check Your Email Address');
+        }
+      });
   }
 
   goToSignup() {

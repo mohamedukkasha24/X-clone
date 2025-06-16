@@ -38,7 +38,6 @@ export class ProfileXLayoutComponent {
     this.messagepage.navigate(['messages']);
   }
 
-  //private grokpage : Router
   goToGrok() {
     this.grokpage.navigate(['grok']);
   }
