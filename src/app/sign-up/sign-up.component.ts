@@ -92,7 +92,6 @@ export class SignUpComponent {
       alert(
         `✅ Account created successfully! Verification code sent to ${this.email}`
       );
-
       this.name = '';
       this.email = '';
       this.password = '';

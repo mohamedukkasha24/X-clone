@@ -18,43 +18,48 @@ import { ProfileXLayoutComponent } from './profile-x-layout/profile-x-layout.com
 import { MoreXLayoutComponent } from './more-x-layout/more-x-layout.component';
 import { ListsXLayoutComponent } from './lists-x-layout/lists-x-layout.component';
 import { CommunitiesXLayoutComponent } from './communities-x-layout/communities-x-layout.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NoAuthGuard } from './guards/no-auth.guard';
+
+
+
 
 export const routes: Routes = [
-  { path: '', component: XAuthComponent },
+  { path: '', component: XAuthComponent,canActivate: [NoAuthGuard]},
   // { path: '**', redirectTo: '' },
-  { path: 'sign-up', component: SignUpComponent },
+  { path: 'sign-up', component: SignUpComponent , canActivate: [NoAuthGuard]},
 
-  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-in', component: SignInComponent , canActivate: [NoAuthGuard]},
 
-  { path: 'inside-sign-up', component: InsideSignUpComponent },
+  { path: 'inside-sign-up', component: InsideSignUpComponent ,canActivate: [NoAuthGuard]},
 
-  { path: 'verification-code', component: VerificationCodeComponent },
+  { path: 'verification-code', component: VerificationCodeComponent , canActivate: [NoAuthGuard]},
 
-  { path: 'password-setup', component: PasswordSetupComponent },
+  { path: 'password-setup', component: PasswordSetupComponent,canActivate: [NoAuthGuard]},
 
-  { path: 'x-layout', component: XLayoutComponent },
+  { path: 'x-layout', component: XLayoutComponent,canActivate : [AuthGuard]},
 
-  { path: 'explore', component: ExploreXLayoutComponent },
+  { path: 'explore', component: ExploreXLayoutComponent ,canActivate : [AuthGuard]},
 
-  { path: 'notifications', component: NotificationsXLayoutComponent },
+  { path: 'notifications', component: NotificationsXLayoutComponent , canActivate : [AuthGuard]},
 
-  { path: 'messages', component: MessagesXLayoutComponent },
+  { path: 'messages', component: MessagesXLayoutComponent , canActivate : [AuthGuard]},
 
-  { path: 'grok', component: GrokXLayoutComponent },
+  { path: 'grok', component: GrokXLayoutComponent , canActivate : [AuthGuard]},
 
-  { path: 'bookmarks', component: BookmarksXLayoutComponent },
+  { path: 'bookmarks', component: BookmarksXLayoutComponent ,canActivate : [AuthGuard]},
 
-  { path: 'jobs', component: JobsXLayoutComponent },
+  { path: 'jobs', component: JobsXLayoutComponent ,canActivate : [AuthGuard]},
 
-  { path: 'premium', component: PremiumXLayoutComponent },
+  { path: 'premium', component: PremiumXLayoutComponent,canActivate : [AuthGuard] },
 
-  { path: 'verifiedorgs', component: VerifiedorgsXLayoutComponent },
+  { path: 'verifiedorgs', component: VerifiedorgsXLayoutComponent , canActivate : [AuthGuard]},
 
-  { path: 'profile', component: ProfileXLayoutComponent },
+  { path: 'profile', component: ProfileXLayoutComponent , canActivate : [AuthGuard] },
 
-  { path: 'more', component: MoreXLayoutComponent },
+  { path: 'more', component: MoreXLayoutComponent , canActivate : [AuthGuard]},
 
-  { path: 'list', component: ListsXLayoutComponent },
+  { path: 'list', component: ListsXLayoutComponent , canActivate : [AuthGuard]},
 
-  { path: 'communities', component: CommunitiesXLayoutComponent },
+  { path: 'communities', component: CommunitiesXLayoutComponent ,canActivate : [AuthGuard]},
 ];

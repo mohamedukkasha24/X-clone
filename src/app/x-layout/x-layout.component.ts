@@ -1,7 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { inject, Injectable } from '@angular/core';
+import {
+  Auth,
+  signOut
 
+} from '@angular/fire/auth';
 @Component({
   selector: 'app-x-layout',
   imports: [CommonModule],
@@ -22,9 +27,12 @@ export class XLayoutComponent {
     private morepage: Router,
     private listpage: Router,
     private grokpage: Router,
-    private communitiespage: Router
-  ) {}
-
+    private communitiespage: Router,
+    private router:Router
+  ) {
+    
+  }
+  private auth: Auth = inject(Auth);
   goToHome() {
     this.homepage.navigate(['x-layout']);
   }
@@ -80,4 +88,21 @@ export class XLayoutComponent {
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
   }
+
+  logout() {
+    const confirmLogout = confirm('Are you sure you want to log out?');
+    if (confirmLogout) {
+      signOut(this.auth).then(() => {
+        localStorage.removeItem('verified'); // ❗Optional: Clear verification flag
+        this.router.navigate(['']);
+      }).catch((error) => {
+        alert('Error during logout: ' + error.message);
+      });
+    }
+  }
+  
+  }
+function ngOnInit() {
+  throw new Error('Function not implemented.');
 }
+

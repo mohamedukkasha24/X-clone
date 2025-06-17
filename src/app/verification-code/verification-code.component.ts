@@ -14,7 +14,7 @@ export class VerificationCodeComponent {
   ngOnInit() {
     this.email = localStorage.getItem('verificationEmail') || '';
   }
-  constructor(private password: Router) {}
+  constructor(private password: Router , private router : Router) {}
   setPassword() {
     this.password.navigate(['/x-layout']);
   }
@@ -24,11 +24,13 @@ export class VerificationCodeComponent {
   verifyCode() {
     const savedCode = localStorage.getItem('verificationCode');
     if (this.enteredCode === savedCode) {
-      this.password.navigate(['/x-layout']);
       alert('Verification successful!');
-      // Navigate or do next step
+      localStorage.setItem('verified', 'true'); //  Set verification flag
+      localStorage.removeItem('newUser');
+      this.router.navigate(['/x-layout']); //  Navigate
     } else {
       alert('Invalid verification code');
     }
   }
 }
+ 
