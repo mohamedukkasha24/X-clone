@@ -1,91 +1,111 @@
-<div class="modal d-block bg-dark bg-opacity-75" tabindex="-1">
+<div class="modal d-block bg-black" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-    <div class="modal-content bg-black text-white rounded-4 p-4 mx-auto w-100 w-md-75 w-lg-50">
-
+    <div
+      class="modal-content bg-black text-white rounded-4 p-4 w-100 mx-auto"
+      style="max-width: 500px"
+    >
       <!-- Close Button -->
       <div class="d-flex justify-content-end">
-        <button class="btn-close btn-close-white" aria-label="Close" [routerLink]="['']"></button>
+        <button
+          class="btn-close btn-close-white"
+          aria-label="Close"
+          [routerLink]="['/']"
+        ></button>
       </div>
 
-      <!-- X Logo -->
-      <div class="text-center mb-3">
-        <span class="fs-2 fw-bold">𝕏</span>
+      <!-- Logo -->
+      <div class="text-center mb-4">
+        <span class="fs-1 fw-bold">𝕏</span>
       </div>
 
       <!-- Title -->
-      <div class="px-md-5 mb-4">
-        <h3 class="fw-bold mb-0">Create your account</h3>
-      </div>
-
+      <h3 class="fw-bold text-center mb-4">Create your account</h3>
 
       <!-- Name -->
-      <div class="mb-3 w-100 px-md-5">
+      <div class="mb-3">
         <label for="name" class="form-label visually-hidden">Name</label>
-        <input [(ngModel)]="name" type="text" id="name" class="form-control bg-black text-white border-secondary"
-          placeholder="Name" maxlength="50" autocomplete="off" />
+        <input
+          [(ngModel)]="name"
+          type="text"
+          id="name"
+          class="form-control bg-black text-white border-secondary"
+          placeholder="Name"
+          maxlength="50"
+          autocomplete="off"
+        />
         <div class="text-end small text-secondary">{{ name.length }} / 50</div>
-        <div></div>
       </div>
 
       <!-- Email -->
-      <div class="mb-3 w-100 px-md-5">
-        <input [(ngModel)]="email" type="email" class="form-control bg-black text-white border-secondary"
-          placeholder="Email" autocomplete="off" />
+      <div class="mb-3">
+        <input
+          [(ngModel)]="email"
+          type="email"
+          class="form-control bg-black text-white border-secondary"
+          placeholder="Email"
+          autocomplete="off"
+        />
       </div>
 
-      <!-- password -->
-      <div class="mb-3 w-100 px-md-5">
-        <input [(ngModel)]="password" type="password" class="form-control bg-black text-white border-secondary"
-          placeholder="Password" autocomplete="off" />
+      <!-- Password -->
+      <div class="mb-3">
+        <input
+          [(ngModel)]="password"
+          type="password"
+          class="form-control bg-black text-white border-secondary"
+          placeholder="Password"
+          autocomplete="off"
+        />
       </div>
 
-      <!-- Date of Birth -->
-      <div class="fw-semibold px-md-5">Date of birth</div>
-      <p class="text-secondary small mb-3 px-md-5">
-        This wont be shown publicly. Confirm your own age, even if this account is for a business, pet, or something
-        else.
+      <!-- Date of Birth Section -->
+      <div class="fw-semibold mb-1">Date of birth</div>
+      <p class="text-secondary small mb-3">
+        This won’t be shown publicly. Confirm your own age, even if this account
+        is for a business, pet, or something else.
       </p>
 
-      <div class="row g-2 px-md-5 mb-4">
-        <div class="col-12 col-md">
-          <select [(ngModel)]="dobMonth" class="form-select bg-black text-white border-secondary">
+      <div class="row g-2 mb-4">
+        <!-- Month -->
+        <div class="col-12 col-md-4">
+          <select
+            [(ngModel)]="dobMonth"
+            class="form-select bg-black text-white border-secondary"
+          >
             <option value="" disabled selected hidden>Month</option>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
+            <option *ngFor="let month of months">{{ month }}</option>
           </select>
-
-
         </div>
-        <div class="col-6 col-md">
-          <select [(ngModel)]="dobDay" class="form-select bg-black text-white border-secondary">
+        <!-- Day -->
+        <div class="col-6 col-md-4">
+          <select
+            [(ngModel)]="dobDay"
+            class="form-select bg-black text-white border-secondary"
+          >
             <option value="" disabled selected hidden>Day</option>
             <option *ngFor="let d of days">{{ d }}</option>
-            <!-- More days -->
           </select>
         </div>
-        <div class="col-6 col-md">
-          <select [(ngModel)]="dobYear" class="form-select bg-black text-white border-secondary">
+        <!-- Year -->
+        <div class="col-6 col-md-4">
+          <select
+            [(ngModel)]="dobYear"
+            class="form-select bg-black text-white border-secondary"
+          >
             <option value="" disabled selected hidden>Year</option>
             <option *ngFor="let y of years">{{ y }}</option>
-            <!-- More years -->
           </select>
         </div>
       </div>
 
-
-      <!-- end -->
-      <div class="px-md-5">
-        <button class="btn btn-secondary w-100 rounded-pill" (click)="registerUser()">Next</button>
+      <!-- Submit Button -->
+      <div>
+        <button
+          class="btn btn-light w-100 rounded-pill fw-semibold"
+          (click)="registerUser()"
+        >
+          Next
+        </button>
       </div>
     </div>
   </div>
