@@ -1,4 +1,19 @@
-.pointer {
-    cursor: pointer;
+:host {
+  display: block;
+  color-scheme: dark;
+}
+
+img {
+  vertical-align: middle;
+}
+:host {
+  display: block;
+  color-scheme: dark;
+}
+
+/* Mobile View - Full Black Background */
+@media (max-width: 576px) {
+  .dark-bg {
+    background-color: #000 !important;
   }
-  
+}
