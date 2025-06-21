@@ -4,7 +4,7 @@ import { CanActivate, Router } from '@angular/router';
 import { Auth, onAuthStateChanged } from '@angular/fire/auth';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NoAuthGuard implements CanActivate {
   private auth: Auth = inject(Auth);

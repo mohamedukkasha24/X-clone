@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-jobs-x-layout',
   imports: [],
   templateUrl: './jobs-x-layout.component.html',
-  styleUrl: './jobs-x-layout.component.css'
+  styleUrl: './jobs-x-layout.component.css',
 })
-export class JobsXLayoutComponent {
-
-}
+export class JobsXLayoutComponent {}

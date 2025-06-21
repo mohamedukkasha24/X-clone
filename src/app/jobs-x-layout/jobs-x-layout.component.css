@@ -1,14 +1,14 @@
 .jobs-page {
-    background-color: #000;
-    min-height: 100vh;
-  }
-  
-  .search-box {
-    cursor: pointer;
-    color: #ccc;
-  }
-  input::placeholder {
-    color: white;
-    opacity: 0.7; /* Optional: make sure it's fully opaque */
-    font-size: 13.5px;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.search-box {
+  cursor: pointer;
+  color: #ccc;
+}
+input::placeholder {
+  color: white;
+  opacity: 0.7; /* Optional: make sure it's fully opaque */
+  font-size: 13.5px;
 }

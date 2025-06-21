@@ -1,84 +1,78 @@
-.margin{
-    margin-left: 260px;
-    font-size: 21px;
+.margin_2 {
+  width: 600px;
+  margin-right: 90px;
 }
-
-.margin_2{
-
-   width: 600px;
-   margin-right: 90px;
+.inputbox {
+  width: 360px;
 }
-.inputbox{
-    width: 360px;
+.subscribetopremium {
+  width: 360px;
+  border-radius: 10px;
 }
-.subscribetopremium{
-    width: 360px;
-    border-radius: 10px;
+.subscribetopremium h5 {
+  font-weight: bold;
 }
-.subscribetopremium h5{
-    font-weight: bold;
+.subscribetopremium p {
+  font-size: 14px;
 }
-.subscribetopremium p{
-    font-size: 14px;
-}
-.whatshappening{
-    width: 360px;
-    border-radius: 10px;
+.whatshappening {
+  width: 360px;
+  border-radius: 10px;
 }
 .whatshappening p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-.showpost{
-    height: 40px;
+.showpost {
+  height: 40px;
 }
-h6 img{
-    border-radius: 50%;
+h6 img {
+  border-radius: 50%;
 }
-.patcumminsimg{
-    border-radius: 20px;
+.patcumminsimg {
+  border-radius: 20px;
 }
 #sunriseblur {
-    font-size: 0.85rem;  
-    filter: blur(0.3px);
-    opacity: 0.6;
+  font-size: 0.85rem;
+  filter: blur(0.3px);
+  opacity: 0.6;
 }
-.textbottom{
-    font-size: 0.85rem;  
-    filter: blur(0.3px);
-    opacity: 0.6;
+.textbottom {
+  font-size: 0.85rem;
+  filter: blur(0.3px);
+  opacity: 0.6;
 }
-.commenticons{
-    font-size: 0.85rem;  
-    filter: blur(0.3px);
-    opacity: 0.6;
+.commenticons {
+  font-size: 0.85rem;
+  filter: blur(0.3px);
+  opacity: 0.6;
 }
-.textwhathappening{
-    filter: blur(0.3px);
-    opacity: 0.6;
+.textwhathappening {
+  filter: blur(0.3px);
+  opacity: 0.6;
 }
-.imgcircle{
-    border-radius: 50%;
+.imgcircle {
+  border-radius: 50%;
 }
-.hoursfont{
-    font-size: 0.85rem;  
-    filter: blur(0.3px);
-    opacity: 0.6;
+.hoursfont {
+  font-size: 0.85rem;
+  filter: blur(0.3px);
+  opacity: 0.6;
 }
-.textblur{
-    font-size: 0.85rem;  
-    filter: blur(0.3px);
-    opacity: 0.6;
+.textblur {
+  font-size: 0.85rem;
+  filter: blur(0.3px);
+  opacity: 0.6;
 }
-.textcolor{
-    font-size: 0.95rem;  
-    filter: blur(0.3px);
-    opacity: 0.6;
+.textcolor {
+  font-size: 0.95rem;
+  filter: blur(0.3px);
+  opacity: 0.6;
 }
-.boderradius{
-    border-radius: 25px;
+.boderradius {
+  border-radius: 25px;
 }
 input::placeholder {
-    color: white;
-    opacity: 1; /* Optional: make sure it's fully opaque */
-    font-size: 13.5px;
+  color: white;
+  opacity: 1; /* Optional: make sure it's fully opaque */
+  font-size: 13.5px;
 }

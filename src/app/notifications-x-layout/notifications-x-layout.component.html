@@ -1,54 +1,7 @@
 <div class="container-fluid vh-100 bg-black text-white">
     <div class="row">
         <div class="col">
-            <div class="d-flex flex-column align-items-start p-3 gap-3 margin">
-                <h3 class="fs-4">X</h3>
-                <nav class="d-flex flex-column gap-2 ">
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        (click)="goToHome()" style="cursor: pointer;"><i class="bi bi-house-door-fill"></i> Home</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        (click)="goToExplore()" style="cursor: pointer;"><i class="bi bi-search"></i> Explore</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        (click)="goToNotification()" style="cursor: pointer;"><i class="bi bi-bell"></i>
-                        Notifications</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        (click)="goToMessage()" style="cursor: pointer;"><i class="bi bi-chat-dots"></i> Messages</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        style="cursor: pointer;" (click)="goToGrok()"><i class="bi bi-claude"></i> Grok</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        style="cursor: pointer;" (click)="goToList()"><i class="bi bi-card-list"></i>Lists</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        (click)="goToBookmarks()" style="cursor: pointer;"><i class="bi bi-bookmark"></i> Bookmarks</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        (click)="goToJobs()" style="cursor: pointer;"><i class="bi bi-briefcase"></i> Jobs</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        style="cursor: pointer;" (click)="goToCommunities()"><i class="bi bi-people"></i>
-                        Communities</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        (click)="goToPremium()" style="cursor: pointer;"><i class="bi bi-twitter-x"></i>Premium</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        style="cursor: pointer;" (click)="goToVerifiedOrgs()"><i class="bi bi-lightning"></i>Verified
-                        Orgs</a>
-                    <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                        style="cursor: pointer;" (click)="goToProfile()"><i class="bi bi-person"></i> Profile</a>
-                    <div class="position-relative d-inline-block" (click)="toggleDropdown()">
-                        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
-                            style="cursor: pointer;">
-                            <i class="bi bi-three-dots"></i> More
-                        </a>
-
-                        <!-- Dropdown menu (visible when dropdownVisible = true) -->
-                        <div *ngIf="dropdownVisible" class="dropdown-menu-top bg-dark text-white p-4 rounded"
-                            style="position: absolute; bottom: 100%; left: 0; z-index: 1000; width: max-content;">
-                            <div class="menu-item p-1"><i class="bi bi-cash-coin me-2"></i>Monetization</div>
-                            <div class="menu-item p-1"><i class="bi bi-image me-2"></i>Ads</div>
-                            <div class="menu-item p-1"><i class="bi bi-mic me-2"></i>Create your Space</div>
-                            <div class="menu-item p-1"><i class="bi bi-gear me-2"></i>Settings and privacy</div>
-                        </div>
-                    </div>
-                </nav>
-                <button class="btn btn-light rounded-pill w-100">Post</button>
-            </div>
+            <app-sidebar></app-sidebar>
         </div>
         <div class="col-6 vh-100 border border-secondary border-top-0  border-bottom-0  margin_2">
             <div class="row border border-secondary border-top-0">

@@ -9,7 +9,7 @@ import { Auth, onAuthStateChanged } from '@angular/fire/auth';
 import { inject } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
   private auth: Auth = inject(Auth);
@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     return new Promise((resolve) => {
       onAuthStateChanged(this.auth, (user) => {
         if (user) {
-           resolve(true);   // Allow access
+          resolve(true); // Allow access
         } else {
           this.router.navigate(['/sign-in']); //  Redirect to login
           resolve(false);
