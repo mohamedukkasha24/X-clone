@@ -1,4 +1,4 @@
-
+/* 
   input::placeholder {
     color: #999;
   }
@@ -14,4 +14,21 @@
   .btn {
     font-weight: 500;
   }
-  
+   */
+
+:host {
+  display: block;
+  color-scheme: dark;
+}
+
+/* Default background for desktop */
+.dark-bg {
+  background-color: #15202b;
+}
+
+/* Override for mobile */
+@media (max-width: 576px) {
+  .dark-bg {
+    background-color: #000 !important;
+  }
+}

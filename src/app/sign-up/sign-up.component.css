@@ -1,9 +1,42 @@
-.modal-content {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  border: 1px solid #333;
+:host {
+  display: block;
+  color-scheme: dark;
 }
 
-.form-control::placeholder,
-.form-select {
-  color: #aaa !important;
+.dark-bg {
+  background-color: #15202b;
+}
+
+@media (max-width: 576px) {
+  .dark-bg {
+    background-color: #000 !important;
+  }
+}
+
+::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+.placeholder-light::placeholder {
+  color: #aaa;
+}
+
+/* Bigger input like real X app */
+.input-lg {
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+}
+.input-lg {
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+}
+
+::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+.placeholder-light::placeholder {
+  color: #aaa;
 }
