@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { Auth, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
 import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-x-auth',

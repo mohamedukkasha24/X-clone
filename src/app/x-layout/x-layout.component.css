@@ -73,7 +73,7 @@ h6 img{
 input::placeholder {
   color: white;
   opacity: 1; /* Optional: make sure it's fully opaque */
-  font-size: 13.5px;
+  /* font-size: 13.5px; */
 }
 
   

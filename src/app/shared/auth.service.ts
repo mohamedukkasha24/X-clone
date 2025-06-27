@@ -2,15 +2,13 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { GoogleAuthProvider } from 'firebase/auth/web-extension';
-import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   constructor(
     private firthauth: AngularFireAuth,
-    private router: Router,
-    private firestore: Firestore
+    private router: Router
   ) {}
   //sign in with google
   googleSignIn() {

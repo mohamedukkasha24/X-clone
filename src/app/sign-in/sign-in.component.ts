@@ -1,17 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormsModule } from '@angular/forms';
-import {
-  Firestore,
-  doc,
-  setDoc,
-  getDocs,
-  collection,
-  query,
-  where,
-} from '@angular/fire/firestore';
+import {Firestore,getDocs,collection,query,where,} from '@angular/fire/firestore';
 @Component({
   selector: 'app-sign-in',
   imports: [CommonModule, RouterLink, FormsModule],

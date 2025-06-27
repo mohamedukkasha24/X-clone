@@ -1,12 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, Router } from '@angular/router';
-import {
-  getAuth,
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
-} from 'firebase/auth';
+import { Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-password-setup',
