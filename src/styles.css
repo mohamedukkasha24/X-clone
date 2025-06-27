@@ -4,6 +4,5 @@ html, body {
     margin: 0;
     background-color: black !important;
     color: white;
-    overflow: hidden; /* prevent whole page from scrolling */
+    overflow: hidden;
   }
-  

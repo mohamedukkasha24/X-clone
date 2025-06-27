@@ -76,4 +76,16 @@ input::placeholder {
   /* font-size: 13.5px; */
 }
 
-  
+.scrollable-column {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .scrollable-column::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  .iconcursor{
+    cursor: pointer;
+  }
