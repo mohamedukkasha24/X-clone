@@ -1,35 +1,35 @@
-<div class="d-flex flex-column align-items-start p-3 gap-3 margin">
-    <h3 class="fs-4">X</h3>
-    <nav class="d-flex flex-column gap-2 ">
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+<div class="d-flex flex-column align-items-start p-3 gap-2 margin " >
+    <h3 class="fs-4"><img src="images/twitter-logo-1.png" alt="" width="35px" height="35px"></h3>
+    <nav class="d-flex flex-column gap-1">
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             (click)="goToHome()" style="cursor: pointer;"><i class="bi bi-house-door-fill"></i> Home</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             (click)="goToExplore()" style="cursor: pointer;"><i class="bi bi-search"></i> Explore</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             (click)="goToNotification()" style="cursor: pointer;"><i class="bi bi-bell"></i>
             Notifications</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             (click)="goToMessage()" style="cursor: pointer;"><i class="bi bi-chat-dots"></i> Messages</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             style="cursor: pointer;" (click)="goToGrok()"><i class="bi bi-claude"></i> Grok</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             style="cursor: pointer;" (click)="goToList()"><i class="bi bi-card-list"></i>Lists</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             (click)="goToBookmarks()" style="cursor: pointer;"><i class="bi bi-bookmark"></i> Bookmarks</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             (click)="goToJobs()" style="cursor: pointer;"><i class="bi bi-briefcase"></i> Jobs</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             style="cursor: pointer;" (click)="goToCommunities()"><i class="bi bi-people"></i>
             Communities</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             (click)="goToPremium()" style="cursor: pointer;"><i class="bi bi-twitter-x"></i>Premium</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             style="cursor: pointer; " (click)="goToVerifiedOrgs()"><i class="bi bi-lightning"></i>Verified
             Orgs</a>
-        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+        <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
             style="cursor: pointer;" (click)="goToProfile()"><i class="bi bi-person"></i> Profile</a>
         <div class="position-relative d-inline-block" (click)="toggleDropdown()">
-            <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-3"
+            <a class="text-white text-decoration-none p-2 rounded-pill text-center mb-1 margin-border d-flex align-items-center gap-2"
                 style="cursor: pointer;">
                 <i class="bi bi-three-dots"></i> More
             </a>
@@ -46,5 +46,7 @@
     </nav>
     <button class="btn btn-light rounded-pill w-100">Post</button>
     <button class="btn btn-primary rounded-pill w-100" (click)="logout()">logout</button>
+    
+    
 
 </div>

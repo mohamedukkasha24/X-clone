@@ -89,3 +89,10 @@ input::placeholder {
   .iconcursor{
     cursor: pointer;
   }
+  .hover-bg:hover {
+    background-color: #615a5a; /* Light gray (for dark themes) */
+    cursor: pointer;
+  }
+  .hover-bg {
+    transition: background-color 0.3s ease;
+  }

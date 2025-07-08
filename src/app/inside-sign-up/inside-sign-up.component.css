@@ -10,6 +10,15 @@ img {
   display: block;
   color-scheme: dark;
 }
+.widthsize{
+  width: 280px; height: 35px; font-size: 14px;
+}
+.policy-text {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
 
 /* Mobile View - Full Black Background */
 @media (max-width: 576px) {

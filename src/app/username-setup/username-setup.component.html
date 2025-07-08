@@ -1,0 +1,54 @@
+<div
+    class="position-fixed top-0 start-0 w-100 h-100 bg-secondary bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-black text-white p-4 rounded-4 shadow-lg w-100 position-relative"
+        style="max-width: 500px; min-height: 584px;">
+
+        <!-- X logo -->
+        <div class="text-center mb-3">
+            <span class="fs-2 fw-bold">𝕏</span>
+        </div>
+
+        <!-- Title and subtitle -->
+        <div class="px-4 px-sm-5">
+            <h4 class="fw-bold text-white">What should we call you?</h4>
+            <p class="character">Your username is unique.You can always change it later.</p>
+
+            <!-- Input -->
+            <div class="form-floating mb-3 position-relative">
+                <span class="position-absolute text-white" 
+                      style="left: 15px; top: 50%; transform: translateY(-50%); z-index: 5;">&#64;</span>
+              
+                <input
+                  #usernameInput
+                  type="text"
+                  class="form-control custom-black-input ps-4"
+                  autocomplete="off"
+                  id="floatingInput"
+                  placeholder=""
+                  [(ngModel)]="enteredusername"
+                  (focus)="isFocused = true"
+                  (blur)="isFocused = false"
+                />
+              
+                <label
+                  for="floatingInput"
+                  [class.text-white]="!enteredusername && !isFocused"
+                  [class.text-primary]="enteredusername || isFocused"
+                >
+                  Username
+                </label>
+              
+                <div *ngIf="usernameError" class="text-danger small mt-1">
+                  {{ usernameError }}
+                </div>
+              </div>
+
+
+            <!-- Button -->
+            <button class="btn btn-light bg-black text-white w-100 rounded-pill" (click)="gotoselectlanguage()">
+                Skip for now
+            </button>
+        </div>
+
+    </div>
+</div>

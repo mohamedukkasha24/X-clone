@@ -14,40 +14,66 @@ export class SignInComponent {
   constructor(
     private router: Router,
     private authservice: AuthService,
-    private xlayout: Router,
+    private signinpassword: Router,
     private firestore: Firestore
   ) {}
 
   email = '';
-  password = '';
-
+  errorMsg: string = '';
   goToXlayout() {
-    if (!this.email || !this.password) {
-      alert('Please enter both email and password.');
-      return;
-    }
+    // if (!this.email || !this.password) {
+    //   alert('Please enter both email and password.');
+    //   return;
+    // }
 
-    this.authservice
-      .login(this.email, this.password)
-      .then(() => {
-        // Login successful — Navigate to x-layout
-        this.xlayout.navigate(['x-layout']);
-      })
-      .catch(async (error) => {
-        // If login failed, check if the email exists in Firestore
-        const usersRef = collection(this.firestore, 'joinees details');
-        const q = query(usersRef, where('email', '==', this.email));
-        const querySnapshot = await getDocs(q);
+    // this.authservice
+    //   .login(this.email, this.password)
+    //   .then(() => {
+    //     // Login successful — Navigate to x-layout
+    //     this.xlayout.navigate(['x-layout']);
+    //   })
+    //   .catch(async (error) => {
+    //     // If login failed, check if the email exists in Firestore
+    //     const usersRef = collection(this.firestore, 'joinees details');
+    //     const q = query(usersRef, where('email', '==', this.email));
+    //     const querySnapshot = await getDocs(q);
 
-        if (!querySnapshot.empty) {
-          alert('Incorrect password.');
-        } else {
-          alert('Please Check Your Email Address');
-        }
-      });
+    //     if (!querySnapshot.empty) {
+    //       alert('Incorrect password.');
+    //     } else {
+    //       alert('Please Check Your Email Address');
+    //     }
+    //   });
+
+    this.showSpinner = true;
+    this.errorMsg = '';
+  
+    this.authservice.checkIfEmailExistsAnywhere(this.email).then((exists) => {
+      if (exists) {
+        this.signinpassword.navigate(['signin-password']);
+      } else {
+        this.errorMsg = "Sorry, we could not find your account.";
+      }
+      this.showSpinner = false;
+    }).catch((err) => {
+      this.errorMsg = "Something went wrong.";
+      console.error(err);
+      this.showSpinner = false;
+    });
   }
 
   goToSignup() {
     this.router.navigate(['/inside-sign-up']); // Make sure /signup route exists
+  }
+
+  signInWithGoogle() {
+    this.authservice.signInWithGoogle();
+  }
+  showSpinner = true;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 900);
   }
 }

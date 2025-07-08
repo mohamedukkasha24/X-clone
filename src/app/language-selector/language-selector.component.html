@@ -1,0 +1,37 @@
+<div class="position-fixed top-0 start-0 w-100 h-100 bg-secondary d-flex justify-content-center align-items-center z-3">
+    <div class="bg-black text-white rounded-4 shadow-lg p-4 w-100" style="max-width: 500px; min-height: 584px;">
+
+        <!-- Header -->
+        <div class="text-center mb-3">
+            <span class="fs-2 fw-bold">𝕏</span>
+        </div>
+
+        <!-- Title & Subtitle -->
+        <div class="px-3 px-sm-4 mb-3">
+            <h4 class="fw-bold">Select language</h4>
+            <p class="text-secondary" style="font-size: 14px;">You’ll be able to see posts, people, and trends in any
+                languages you choose.</p>
+        </div>
+
+        <!-- Scrollable checkbox list -->
+        <!-- Scrollable checkbox list -->
+        <div class="overflow-auto mb-4 px-3" style="max-height: 300px;">
+            <div *ngFor="let lang of languages" class="d-flex align-items-center mb-2">
+                <input class="form-check-input bg-dark border-secondary me-2" type="checkbox" [id]="lang"
+                    [checked]="isSelected(lang)" (change)="toggleLanguage(lang)" />
+                <label class="form-check-label text-white" [for]="lang">
+                    {{ lang }}
+                </label>
+            </div>
+        </div>
+
+
+        <!-- Next Button -->
+        <div class="px-3">
+            <button class="btn btn-light w-100 rounded-pill fw-semibold" [disabled]="selectedLanguages.length === 0"
+                (click)="continue()">
+                Next
+            </button>
+        </div>
+    </div>
+</div>

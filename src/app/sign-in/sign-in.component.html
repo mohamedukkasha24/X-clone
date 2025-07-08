@@ -1,42 +1,77 @@
 <div
-  class="position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-75 d-flex justify-content-center align-items-center z-3">
-  <div class="bg-black text-white rounded-4 shadow-lg p-4 w-100" style="max-width: 550px;">
-
-    <!-- Close Button -->
-    <div class="d-flex justify-content-end">
-      <button class="btn-close btn-close-white" aria-label="Close" [routerLink]="['']"></button>
+  class="position-fixed top-0 start-0 w-100 h-100 bg-secondary bg-opacity-75 d-flex flex-column  justify-content-center align-items-center z-3">
+  <div class="bg-black text-white rounded-4 shadow-lg p-4 w-100" style="max-width: 530px;min-height: 600px;">
+    <div *ngIf="showSpinner" class="d-flex justify-content-center align-items-center" style="min-height: 584px">
+      <div class="spinner-border spinner-border-sm text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
 
-    <!-- X logo -->
-    <div class="text-center mb-3">
-      <span class="fs-2 fw-bold">𝕏</span>
-    </div>
-
-    <!-- Title -->
-    <div class="px-4 px-sm-5">
-      <h4 class="fw-bold text-white mb-3">Sign in to X</h4>
-
-      <!-- Email -->
-      <div class="form-group mb-3">
-        <input type="text" class="form-control bg-black text-white border-secondary rounded-1 p-3" placeholder="Email"
-          [(ngModel)]="email" />
+    <!-- Form Content (Hidden while spinner is shown) -->
+    <div *ngIf="!showSpinner">
+      <!-- Close Button -->
+      <div class="d-flex justify-content-start">
+        <button class="btn-close btn-close-white" aria-label="Close" [routerLink]="['/']"></button>
       </div>
 
-      <!-- Password -->
-      <div class="form-group mb-3">
+      <!-- X logo -->
+      <div class="text-center">
+        <span class="fs-2 fw-bold">𝕏</span>
+      </div>
+
+      <!-- Title -->
+      <div class="px-4 px-sm-5">
+
+        <h4 class="fw-bold text-white mb-3 ms-5">Sign in to X</h4>
+        <div class="w-75 d-flex flex-column align-items-center justify-content-center mx-auto">
+
+
+          <button class="btn btn-light w-100 mb-3 d-flex align-items-center justify-content-center gap-2 rounded-pill" (click)="signInWithGoogle()">
+            <img src="/images/Google_Icons.webp" alt="Google" width="30" height="30">
+            Sign in with Google
+          </button>
+
+          <button class="btn btn-light w-100 mb-3 d-flex align-items-center justify-content-center gap-2 rounded-pill">
+            <img src="/images/apple-logo.webp" alt="Apple" width="20" height="20">
+            Sign in with Apple
+          </button>
+
+          <!-- Divider -->
+          <div class="d-flex align-items-center text-secondary my-2 w-100">
+            <hr class="flex-grow-1 border-0 border-top border-light opacity-25" style="height: 1px; margin: 0;" />
+            <span class="px-2 small text-light">or</span>
+            <hr class="flex-grow-1 border-0 border-top border-light opacity-25" style="height: 1px; margin: 0;" />
+          </div>
+
+          <!-- Email -->
+          <div class="form-group mb-3 w-100">
+            <input type="text" class="form-control bg-black text-white border-secondary rounded-1 p-3"
+              placeholder="Phone, email or username" [(ngModel)]="email" />
+          </div>
+
+          <!-- Password -->
+          <!-- <div class="form-group mb-3">
         <input type="password" class="form-control bg-black text-white border-secondary rounded-1 p-3"
           placeholder="Password" [(ngModel)]="password" />
+      </div> -->
+
+          <!-- Buttons -->
+          <button class="btn btn-light w-100 mb-3 rounded-pill" (click)="goToXlayout()">Next</button>
+          <button class="btn btn-black w-100 mb-3 rounded-pill border border-secondary text-white">Forgot
+            password?</button>
+
+          <!-- Signup link -->
+          <p class="text-secondary text-center small mb-0">
+            Don't have an account?
+            <a class="text-primary text-decoration-none pointer" (click)="goToSignup()">Sign up</a>
+          </p>
+        </div>
       </div>
-
-      <!-- Buttons -->
-      <button class="btn btn-light w-100 mb-3 rounded-pill" (click)="goToXlayout()">Next</button>
-      <button class="btn btn-dark w-100 mb-3 rounded-pill border border-secondary text-white">Forgot password?</button>
-
-      <!-- Signup link -->
-      <p class="text-secondary text-center small mb-0">
-        Don't have an account?
-        <a class="text-primary text-decoration-none pointer" (click)="goToSignup()">Sign up</a>
-      </p>
+    </div>
+  
+  </div>
+  <div *ngIf="errorMsg" class="text-center mt-5">
+    <div class="bg-primary text-white border border-primary px-3 py-2 small">
+      {{ errorMsg }}
     </div>
   </div>
-</div>

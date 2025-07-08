@@ -10,41 +10,46 @@
     </div>
 
     <!-- Right Side: Form -->
-    <div class="w-100 w-md-50 d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
-      <h1 class="display-4 fw-bold mb-3">Happening now</h1>
-      <h2 class="h4 fw-semibold mb-3">Join today.</h2>
+    <div class="w-75 w-md-50 d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
+      <h1 class="fw-bold mb-3 mt-4" style="font-size: 64px;">Happening now</h1>
+      <h2 class="h4 fw-semibold mb-3 mt-4">Join today.</h2>
 
-      <button class="btn btn-light w-50 mb-3 d-flex align-items-center justify-content-center gap-2 rounded-pill"
-        (click)="signInWithGoogle()">
-        <img src="/images/Google_Icons.webp" alt="Google" width="30" height="30">
-        Sign up with Google
-      </button>
+      <button class="btn btn-light mb-2 d-flex align-items-center justify-content-center gap-1 rounded-pill p-1"
+      (click)="signInWithGoogle()" style="width: 280px; height: 35px; font-size: 14px;">
+      <img src="/images/Google_Icons.webp" alt="Google" width="17" height="17">
+      Sign up with Google
+    </button>
 
-      <button class="btn btn-light w-50 mb-3 d-flex align-items-center justify-content-center gap-2 rounded-pill"
-        [routerLink]="['/sign-up-with-apple']">
-        <img src="/images/apple-logo.webp" alt="Apple" width="20" height="20">
+      <button class="btn btn-light mb-2 mt-1 d-flex align-items-center justify-content-center rounded-pill p-1"
+        [routerLink]="['/sign-up-with-apple']" style="width: 280px;height: 35px;font-size: 14px;">
+        <img src="/images/apple-logo.webp" alt="Apple" width="17" height="17">
         Sign up with Apple
       </button>
 
-      <div class="text-secondary my-3 w-50 text-center">OR</div>
+        <!-- Divider -->
+        <div class="d-flex align-items-center justify-content-center my-1" style="width: 280px;height: 35px;">
+          <hr class="flex-grow-1 me-2 border-0 border-top border-light opacity-25" style="height: 1px;" />
+          <span class="small text-light opacity-75">OR</span>
+          <hr class="flex-grow-1 ms-2 border-0 border-top border-light opacity-25" style="height: 1px;" />
+        </div>
 
-      <button class="btn btn-primary w-50 mb-3 rounded-pill" (click)="signUp()">
+      <button class="btn btn-primary mb-2 rounded-pill" (click)="signUp()" style="width: 280px;height: 35px;font-size: 14px;font-weight: bold;">
         Create account
       </button>
 
-      <p class="text-secondary small w-75" id="termsOfPolicy">
+      <p class="text-secondary small" id="termsOfPolicy" style="width: 280px;">
         By signing up, you agree to the
         <a href="#" class="text-decoration-underline">Terms of Service</a> and
-        <a href="#" class="text-decoration-underline">Privacy Policy <br></a> including
+        <a href="#" class="text-decoration-underline">Privacy Policy</a> including
         <a href="#" class="text-decoration-underline">Cookie Use</a>.
       </p>
 
-      <p class="mt-3 w-75" id="alreadyHaveAnAccount">
+      <p class="mt-2" style="width: 260px;font-weight: bold;">
         Already have an account?
       </p>
 
-      <button class="btn btn-dark w-50 mb-4 rounded-pill border border-secondary text-primary bg-black"
-        [routerLink]="['/sign-in']">
+      <button class="btn btn-dark mb-4 rounded-pill border border-secondary text-primary bg-black"
+        [routerLink]="['/sign-in']" style="width: 280px;height: 35px;">
         Sign In
       </button>
     </div>
@@ -52,9 +57,9 @@
 
   <!-- Footer -->
   <footer class="bg-black text-center py-3 w-100">
-    <div style="font-size: 0.75rem; 
+    <div style="font-size: 0.67rem; 
      filter: blur(0.3px);
-     opacity: 0.6;
+     opacity: 0.5;
  " class="text-white">
       <div> <a href="https://about.x.com/en" class="text-decoration-none text-white" target="_blank">About </a> &nbsp;
         |&nbsp;
@@ -106,3 +111,10 @@
     </div>
   </footer>
 </div>
+
+@if (isSignUpModal) {
+<div class="position-fixed top-0 start-0 w-100 h-100 z-50 d-flex justify-content-center align-items-center"
+  style="background-color: rgba(91, 112, 131, 0.6);">
+  <app-sign-up (closeModal)="isSignUpModal = false"></app-sign-up>
+</div>
+}

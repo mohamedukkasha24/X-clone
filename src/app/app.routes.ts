@@ -20,46 +20,62 @@ import { ListsXLayoutComponent } from './lists-x-layout/lists-x-layout.component
 import { CommunitiesXLayoutComponent } from './communities-x-layout/communities-x-layout.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NoAuthGuard } from './guards/no-auth.guard';
+import { SigninPasswordComponent } from './signin-password/signin-password.component';
+import { ProfilePictureSetupComponent } from './profile-picture-setup/profile-picture-setup.component';
+import { UsernameSetupComponent } from './username-setup/username-setup.component';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { SelectInterestComponent } from './select-interest/select-interest.component';
+
 
 
 
 
 export const routes: Routes = [
-  { path: '', component: XAuthComponent,canActivate: [NoAuthGuard]},
+  { path: '', component: XAuthComponent},
   // { path: '**', redirectTo: '' },
-  { path: 'sign-up', component: SignUpComponent , canActivate: [NoAuthGuard]},
+  { path: 'sign-up', component: SignUpComponent},
 
-  { path: 'sign-in', component: SignInComponent , canActivate: [NoAuthGuard]},
+  { path: 'sign-in', component: SignInComponent},
 
-  { path: 'inside-sign-up', component: InsideSignUpComponent ,canActivate: [NoAuthGuard]},
+  { path: 'inside-sign-up', component: InsideSignUpComponent},
 
-  { path: 'verification-code', component: VerificationCodeComponent , canActivate: [NoAuthGuard]},
+  { path: 'verification-code', component: VerificationCodeComponent},
 
-  { path: 'password-setup', component: PasswordSetupComponent,canActivate: [NoAuthGuard]},
+  { path: 'password-setup', component: PasswordSetupComponent},
 
-  { path: 'x-layout', component: XLayoutComponent,canActivate : [AuthGuard]},
+  { path: 'x-layout', component: XLayoutComponent},
 
-  { path: 'explore', component: ExploreXLayoutComponent ,canActivate : [AuthGuard]},
+  { path: 'explore', component: ExploreXLayoutComponent},
 
-  { path: 'notifications', component: NotificationsXLayoutComponent , canActivate : [AuthGuard]},
+  { path: 'notifications', component: NotificationsXLayoutComponent},
 
-  { path: 'messages', component: MessagesXLayoutComponent , canActivate : [AuthGuard]},
+  { path: 'messages', component: MessagesXLayoutComponent},
 
-  { path: 'grok', component: GrokXLayoutComponent , canActivate : [AuthGuard]},
+  { path: 'grok', component: GrokXLayoutComponent},
 
-  { path: 'bookmarks', component: BookmarksXLayoutComponent ,canActivate : [AuthGuard]},
+  { path: 'bookmarks', component: BookmarksXLayoutComponent},
 
-  { path: 'jobs', component: JobsXLayoutComponent ,canActivate : [AuthGuard]},
+  { path: 'jobs', component: JobsXLayoutComponent},
 
-  { path: 'premium', component: PremiumXLayoutComponent,canActivate : [AuthGuard] },
+  { path: 'premium', component: PremiumXLayoutComponent},
 
-  { path: 'verifiedorgs', component: VerifiedorgsXLayoutComponent , canActivate : [AuthGuard]},
+  { path: 'verifiedorgs', component: VerifiedorgsXLayoutComponent},
 
-  { path: 'profile', component: ProfileXLayoutComponent , canActivate : [AuthGuard] },
+  { path: 'profile', component: ProfileXLayoutComponent},
 
-  { path: 'more', component: MoreXLayoutComponent , canActivate : [AuthGuard]},
+  { path: 'more', component: MoreXLayoutComponent},
 
-  { path: 'list', component: ListsXLayoutComponent , canActivate : [AuthGuard]},
+  { path: 'list', component: ListsXLayoutComponent},
 
-  { path: 'communities', component: CommunitiesXLayoutComponent ,canActivate : [AuthGuard]},
+  { path: 'communities', component: CommunitiesXLayoutComponent},
+
+  { path: 'signin-password', component:SigninPasswordComponent},
+
+  { path: 'profile-picture-setup', component:ProfilePictureSetupComponent},
+
+  { path: 'username-setup' , component: UsernameSetupComponent},
+
+  { path : 'language-selector' , component :LanguageSelectorComponent},
+
+  { path : 'select-interest' , component : SelectInterestComponent}
 ];

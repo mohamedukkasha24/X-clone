@@ -1,0 +1,52 @@
+<div
+    class="position-fixed top-0 start-0 w-100 h-100 bg-secondary bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+
+    <!-- Modal Card -->
+    <div class="bg-black text-white p-4 rounded-4 shadow-lg w-100 position-relative d-flex flex-column"
+        style="max-width: 500px; max-height: 600px;">
+
+        <!-- Header -->
+        <div class="text-center mb-3">
+            <span class="fs-2 fw-bold">𝕏</span>
+        </div>
+
+        <!-- Title -->
+        <div class="text-center mb-3">
+            <h4 class="fw-bold">What do you want to see on X?</h4>
+            <p class="text-secondary">Select topics you're interested in to personalize your experience.</p>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="overflow-auto scrollable-modal flex-grow-1 pe-2">
+            <div class="row gx-3 gy-3">
+                <div class="col-12 col-sm-6 col-md-4" *ngFor="let interest of interests">
+                    <div (click)="toggleInterest(interest)"
+                        class="card interest-card text-white rounded shadow-sm text-center overflow-hidden"
+                        [class.bg-selected]="interest.selected" style="cursor: pointer; height: 140px;">
+
+                        <!-- Full-cover image -->
+                        <img [src]="interest.image" alt="{{ interest.label }}"
+                            class="w-100 h-100 object-cover position-absolute top-0 start-0"
+                            style="object-fit: cover; z-index: 1;" />
+
+                        <!-- Overlay Text -->
+                        <div class="position-relative z-2 d-flex justify-content-center align-items-center h-100 w-100"
+                            style="background-color: rgba(0, 0, 0, 0.4);">
+                            <span class="fw-bold" style="font-size: 14px;">{{ interest.label }}</span>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Button (Stays at bottom of modal) -->
+        <div class="mt-3">
+            <button class="btn btn-primary w-100 rounded-pill" (click)="gotoxlayout()">Next</button>
+        </div>
+
+    </div>
+</div>

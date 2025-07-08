@@ -1,55 +1,70 @@
-<div class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center z-3 dark-bg"
-  style="background-color: #15202b">
-  <div class="bg-black text-white rounded-4 shadow-lg w-100 mx-3 p-4 p-sm-5" style="max-width: 500px">
-    <!-- Header -->
-    <div class="position-relative mb-3">
-      <span class="fs-2 fw-bold d-block text-center">𝕏</span>
-      <button class="btn-close btn-close-white position-absolute end-0 top-0" aria-label="Close"
-        [routerLink]="['']"></button>
+<div
+  class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center z-3 dark-bg bg-secondary">
+  <div class="position-relative bg-black text-white rounded-4 shadow-lg w-100 mx-3 p-4 p-sm-5"
+    style="max-width: 530px;min-height: 600px;">
+    <div *ngIf="showSpinner"
+      class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-black rounded-4">
+      <div class="spinner-border  spinner-border-sm text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
+    <div *ngIf="!showSpinner">
+      <!-- Header -->
+      <div class="position-relative mb-3">
+        <span class="fs-2 fw-bold d-block text-center">𝕏</span>
+        <button class="btn-close btn-close-white position-absolute end-0 top-0" aria-label="Close"
+          [routerLink]="['']"></button>
+      </div>
 
-    <!-- Title -->
-    <h4 class="fw-bold mb-4 text-center">Join X today</h4>
+      <!-- Title -->
+      
+      <div class="d-flex  flex-column justify-content-center align-items-center">
+        <h4 class="fw-bold mb-4 text-start" style="width: 280px;">Join X today</h4>
+        <!-- Google Button -->
+        <button
+          class="btn btn-light  mb-3 d-flex align-items-center justify-content-center gap-2 rounded-pill widthsize"
+          (click)="signInWithGoogle()">
+          <img src="/images/Google_Icons.webp" alt="Google" width="20" />
+          <span class="text-dark fw-medium">Sign up with Google</span>
+        </button>
 
-    <!-- Google Button -->
-    <button class="btn btn-light w-100 mb-3 d-flex align-items-center justify-content-center gap-2 rounded-pill"
-      (click)="signInWithGoogle()">
-      <img src="/images/Google_Icons.webp" alt="Google" width="20" />
-      <span class="text-dark fw-medium">Sign up with Google</span>
-    </button>
+        <!-- Apple Button -->
+        <button
+          class="btn btn-light d-flex align-items-center justify-content-center gap-2 rounded-pill widthsize">
+          <img src="/images/apple-logo.webp" alt="Apple" width="20" />
+          <span class="text-dark fw-medium">Sign up with Apple</span>
+        </button>
 
-    <!-- Apple Button -->
-    <button class="btn btn-light w-100 mb-3 d-flex align-items-center justify-content-center gap-2 rounded-pill">
-      <img src="/images/apple-logo.webp" alt="Apple" width="20" />
-      <span class="text-dark fw-medium">Sign up with Apple</span>
-    </button>
+        <!-- Divider -->
+        <div class="d-flex align-items-center text-secondary widthsize">
+          <hr class="flex-grow-1 border-secondary" />
+          <span class="px-2 small">or</span>
+          <hr class="flex-grow-1 border-secondary" />
+        </div>
 
-    <!-- Divider -->
-    <div class="d-flex align-items-center text-secondary my-3">
-      <hr class="flex-grow-1 border-secondary" />
-      <span class="px-2 small">or</span>
-      <hr class="flex-grow-1 border-secondary" />
+        <!-- Create Account -->
+        <button class="btn btn-primary widthsize rounded-pill" (click)="createAccount()">
+          Create account
+        </button>
+
+        <!-- Terms -->
+        <p class="text-secondary text-start mt-1 policy-text" style="width: 280px;">
+          <span class="d-block">By signing up, you agree to the 
+            <a href="#" class="text-decoration-none">Terms of Service</a>
+          </span>
+          <span class="d-block text-indent">and 
+            <a href="#" class="text-decoration-none">Privacy Policy</a>, including 
+            <a href="#" class="text-decoration-none">Cookie Use</a>.
+          </span>
+        </p>
+
+        <!-- Already have account -->
+        <p class="text-start mt-3 text-secondary small widthsize">
+          Have an account already?
+          <a class="text-primary text-decoration-none fw-bold" (click)="gotosigninpage()" role="button"
+            style="cursor: pointer">Log in</a>
+        </p>
+      </div>
     </div>
-
-    <!-- Create Account -->
-    <button class="btn btn-primary w-100 mb-3 rounded-pill" (click)="createAccount()">
-      Create account
-    </button>
-
-    <!-- Terms -->
-    <p class="text-secondary small text-center mt-3">
-      By signing up, you agree to the
-      <a href="#" class="text-decoration-underline text-white">Terms of Service</a>
-      and
-      <a href="#" class="text-decoration-underline text-white">Privacy Policy</a>, including
-      <a href="#" class="text-decoration-underline text-white">Cookie Use</a>.
-    </p>
-
-    <!-- Already have account -->
-    <p class="text-center mt-4 text-secondary small">
-      Have an account already?
-      <a class="text-primary text-decoration-none fw-bold" (click)="gotosigninpage()" role="button"
-        style="cursor: pointer">Log in</a>
-    </p>
   </div>
 </div>

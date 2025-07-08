@@ -1,0 +1,62 @@
+<!-- Parent container -->
+<div
+    class="position-fixed top-0 start-0 w-100 h-100 bg-secondary bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+
+    <!-- Modal Card -->
+    <div class="bg-black text-white p-4 rounded-4 shadow-lg w-100 position-relative"
+        style="max-width: 500px; min-height: 584px;">
+        <!-- Modal content -->
+        <div class="text-center mb-3">
+            <span class="fs-2 fw-bold">𝕏</span>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h4 class="fw-bold mb-3">Pick a profile picture</h4>
+            <p class="email mb-3">Have a favorite selfi ?. Upload it now.</p>
+
+            <!-- Input -->
+
+            <div class="position-relative d-flex justify-content-center align-items-center mb-3" #dropdownContainer>
+
+                <!-- Profile Image -->
+                <img [src]="previewUrl || '/images/userprofile.png'" alt="Profile"
+                     class="rounded-circle opacity-40"
+                     style="width: 150px; height: 150px; object-fit: cover;" />
+              
+                <!-- Centered Camera Icon with Plus -->
+                <div class="position-absolute"
+                     style="top: 50%; right: 36%; transform: translate(-50%, -50%); cursor: pointer;"
+                     (click)="toggleOptions()">
+              
+                  <div class="position-relative">
+                    <i class="bi bi-camera text-white" style="font-size: 21px; opacity: 0.7;"></i>
+                    <i class="bi bi-plus position-absolute text-white"
+                       style="font-size: 1rem; top: -1px; right: -7px;"></i>
+                  </div>
+                </div>
+              
+                <!-- Dropdown: Separated from camera icon to prevent shifting -->
+                <div *ngIf="showOptions"
+                     class="position-absolute"
+                     style="top: 72%; right: 36%; transform: translateX(50%); z-index: 10;">
+                  <div class="bg-dark border border-secondary rounded shadow-sm p-2" style="min-width: 120px;">
+                    <button class="btn btn-sm btn-dark text-white w-100 text-start" (click)="triggerFileInput()">Change</button>
+                    <button class="btn btn-sm btn-dark text-danger w-100 text-start" (click)="removeImage()">Remove</button>
+                  </div>
+                </div>
+              
+                <!-- Hidden File Input -->
+                <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" hidden />
+              </div>
+              
+
+
+
+
+            <button class="btn btn-black text-white w-75 rounded-pill mt-4 border border-secondary" (click)="gotousername()">
+                Skip for now
+            </button>
+        </div>
+    </div>
+
+</div>

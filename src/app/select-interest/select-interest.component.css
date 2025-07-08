@@ -1,0 +1,42 @@
+.scrollable-modal {
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #666 #000; /* Firefox */
+    scrollbar-width: thin;
+  }
+  
+  /* Webkit Browsers (Chrome, Edge, Safari) */
+  .scrollable-modal::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollable-modal::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 10px;
+  }
+  
+  .scrollable-modal::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 10px;
+  }
+  
+  .scrollable-modal::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+  }
+
+  .interest-card {
+    background-color: #111; /* Default dark background */
+    transition: background-color 0.2s ease;
+    border: none; /* No border */
+  }
+  
+  .interest-card:hover {
+    background-color: #817878 !important;
+    opacity: 0.2; /* Slightly lighter on hover */
+  }
+  
+  /* Optional: different color for selected cards */
+ 
+  
+  

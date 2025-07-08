@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+
 import {
   Firestore,
   collection,
@@ -18,18 +20,19 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
 })
-export class SignUpComponent {
+export class SignUpComponent implements AfterViewInit {
+  @ViewChild('nameInput') nameInputRef!: ElementRef;
   name = '';
   email = '';
-  password = '';
   dobMonth = '';
   dobDay = '';
   dobYear = '';
-  otpSent = false;
-  otp = '';
-  phoneNumber = '';
-  verificationId = '';
-
+  nameError = '';
+  emailError = '';
+  passwordError = '';
+  dobError = '';
+  isNameFocused = false;
+  isEmailFocused = false;
   months = [
     'January',
     'February',
@@ -55,65 +58,31 @@ export class SignUpComponent {
   ) {}
 
   async registerUser() {
-    // Input validations
-    if (!this.name || !this.email) {
-      alert('Name and Email are required!');
-      return;
-    }
-
-    if (/[A-Z]/.test(this.email)) {
-      alert('Email must not contain uppercase letters.');
-      return;
-    }
-
-    if (this.email.length < 5) {
-      alert('Email is too short.');
-      return;
-    }
-
-    const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    if (!emailPattern.test(this.email)) {
-      alert('Invalid email format.');
-      return;
-    }
-
-    if (!this.dobMonth || !this.dobDay || !this.dobYear) {
-      alert('Please select your full date of birth.');
-      return;
-    }
-
-    // Check if user already exists in Firestore
+    this.emailError = '';
     const usersRef = collection(this.firestore, 'joinees details');
     const q = query(usersRef, where('email', '==', this.email));
     const snapshot = await getDocs(q);
 
     if (!snapshot.empty) {
-      alert('This email is already registered. Please use another one.');
+      this.emailError = 'An account with this email already exists.';
       return;
     }
-
     try {
-      // Call signup from AuthService
       await this.authService.signup(
         this.name,
-        this.dobDay,
         this.dobMonth,
+        this.dobDay,
         this.dobYear,
         this.email,
-        this.password
       );
 
       const verificationCode = Math.floor(100000 + Math.random() * 900000);
       localStorage.setItem('verificationCode', verificationCode.toString());
-
-      alert(
-        `✅ Account created successfully! Verification code sent to ${this.email}`
-      );
+      // Call AuthService signup
 
       // Clear form
       this.name = '';
       this.email = '';
-      this.password = '';
       this.dobDay = '';
       this.dobMonth = '';
       this.dobYear = '';
@@ -123,5 +92,56 @@ export class SignUpComponent {
     } catch (error: any) {
       alert('Sign Up failed: ' + error.message);
     }
+  }
+  validateName() {
+    if (!this.name.trim()) {
+      this.nameError = 'What"s your name?';
+    } else {
+      this.nameError = '';
+    }
+  }
+  validateEmail() {
+    const trimmedEmail = this.email.trim();
+    this.emailError = '';
+
+    if (!trimmedEmail) {
+      this.emailError = 'Email is required.';
+    } else if (/[A-Z]/.test(trimmedEmail)) {
+      this.emailError = 'Email must not contain uppercase letters.';
+    } else if (trimmedEmail.length < 5) {
+      this.emailError = 'Email is too short.';
+    } else {
+      const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|in|edu)$/;
+      if (!pattern.test(trimmedEmail)) {
+        this.emailError = 'Email must end with .com, .in, or .edu';
+      }
+    }
+  }
+  isFormValid(): boolean {
+    return (
+      this.name.trim().length > 0 &&
+      this.email.trim().length > 0 &&
+      /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(this.email) &&
+      this.dobDay !== '' &&
+      this.dobMonth !== '' &&
+      this.dobYear !== ''
+    );
+  }
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.nameInputRef.nativeElement.focus();
+    }, 0);
+  }
+  showSpinner = true;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 900);
+  }
+  @Output() closeModal = new EventEmitter<void>();
+
+  close() {
+    this.closeModal.emit(); // Tell parent to hide modal
   }
 }

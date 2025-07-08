@@ -1,9 +1,76 @@
+/* MODAL */
 .modal-content {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   border: 1px solid #333;
 }
 
+/* FLOATING LABEL */
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.floating-label.active {
+  top: 6px;
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* INPUT BASE STYLES */
+input.form-control,
+select.form-select {
+  padding-top: 1.5rem;
+  background-color: black !important;
+  color: white;
+  border-color: #6c757d;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* FOCUS STATE (WITHOUT ERROR) */
+input.form-control:focus:not(.is-invalid),
+select.form-select:focus:not(.is-invalid) {
+  border-color: #1d9bf0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: black !important;
+  color: white;
+}
+
+/* ERROR STATE */
+input.is-invalid,
+select.is-invalid {
+  border-color: #dc3545 !important;
+  background-image: none !important;
+  background-size: 0 !important;
+  box-shadow: none !important;
+}
+
+/* FOR INPUTS WITH RIGHT ICON (e.g. eye icon for password) */
+input.form-control {
+  padding-right: 3.5rem !important;
+}
+
+input.no-validation-icon.is-invalid {
+  background-image: none !important;
+  padding-right: 3.5rem !important;
+}
+
+/* WARNING ICON REMOVAL FOR PASSWORD FIELD */
+input[type='password'].is-invalid {
+  background-image: none !important;
+}
+
+/* PLACEHOLDER COLOR */
 .form-control::placeholder,
 .form-select {
   color: #aaa !important;
+}
+.spinner-border.text-primary {
+  color: #1d9bf0 !important; /* Twitter blue */
 }

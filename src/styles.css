@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
 html, body {
     height: 100%;
     margin: 0;
-    background-color: black !important;
+    background-color: black;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
   }

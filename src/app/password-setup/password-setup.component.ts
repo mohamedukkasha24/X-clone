@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, ElementRef, ViewChild} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router} from '@angular/router';
-
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-password-setup',
@@ -13,21 +13,40 @@ import { Router} from '@angular/router';
 })
 export class PasswordSetupComponent {
   enteredPassword: string = '';
+  isFocused = false;
+  passwordError = '';
+  @ViewChild('passwordInput') passwordInputRef!: ElementRef;
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  validateAndContinue() {
-    const originalPassword = localStorage.getItem('signupPassword');
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.passwordInputRef.nativeElement.focus();
+      this.isFocused = true;
+    });
+  }
 
-    if (!this.enteredPassword) {
-      alert('Please enter a password');
-      return;
+  validatePassword(): boolean {
+    if (this.enteredPassword.length < 8) {
+      this.passwordError = 'Password must be at least 8 characters';
+      return false;
     }
+    this.passwordError = '';
+    return true;
+  }
 
-    if (this.enteredPassword === originalPassword) {
-      this.router.navigate(['/x-layout']);
-    } else {
-      alert('Passwords do not match. Please try again.');
+  async validateAndContinue() {
+    try {
+      if (this.enteredPassword.length < 8) {
+        alert('Password must be at least 8 characters');
+        return;
+      }
+
+      await this.authService.setPassword(this.enteredPassword);
+      this.router.navigate(['/profile-picture-setup']);
+    } catch (error: any) {
+      console.error('Password update error:', error);
+      alert('Something went wrong: ' + error.message);
     }
   }
 }

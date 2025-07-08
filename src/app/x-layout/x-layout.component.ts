@@ -21,6 +21,11 @@ export class XLayoutComponent {
       // You can now upload it to Firebase, API, etc.
     }
   }
+  selectedTab: 'for-you' | 'following' = 'for-you';
+
+  selectTab(tab: 'for-you' | 'following') {
+    this.selectedTab = tab;
+  }
   }
 
 

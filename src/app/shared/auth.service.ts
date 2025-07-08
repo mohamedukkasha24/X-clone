@@ -11,15 +11,15 @@ export class AuthService {
     private router: Router
   ) {}
   //sign in with google
-  googleSignIn() {
-    return this.firthauth.signInWithPopup(new GoogleAuthProvider()).then(
-      (res) => {
-        this.router.navigate(['/x-layout']);
-        localStorage.setItem('token', JSON.stringify(res.user?.uid));
-      },
-      (err) => {
-        alert(err.message);
-      }
-    );
-  }
+  // googleSignIn() {
+  //   return this.firthauth.signInWithPopup(new GoogleAuthProvider()).then(
+  //     (res) => {
+  //       this.router.navigate(['/x-layout']);
+  //       localStorage.setItem('token', JSON.stringify(res.user?.uid));
+  //     },
+  //     (err) => {
+  //       alert(err.message);
+  //     }
+  //   );
+  // }
 }

@@ -1,4 +1,12 @@
-.margin{              
+.margin{            
     margin-left: 260px;   /*1*/
     font-size: 21px;
+    
 }
+.hover-bg-custom:hover {
+    background-color: #2d2d2d; /* Approximate Tailwind's bg-gray-800 */
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
