@@ -9,33 +9,27 @@
             <div class="row text-center">
                 <!-- For You Tab -->
                 <div class="col pt-2 pb-0 hover-bg" (click)="selectTab('for-you')">
-                  <div class="d-inline-flex flex-column align-items-center">
-                    <a href="" class="text-decoration-none text-white">For you</a>
-                    <div
-                      class="mt-2"
-                      [ngStyle]="{
+                    <div class="d-inline-flex flex-column align-items-center">
+                        <a href="" class="text-decoration-none text-white">For you</a>
+                        <div class="mt-2" [ngStyle]="{
                         'background-color': selectedTab === 'for-you' ? '#1d9bf0' : 'transparent'
-                      }"
-                      style="width: 55px; height: 4px; border-radius: 9999px; margin-bottom: -1px;">
+                      }" style="width: 55px; height: 4px; border-radius: 9999px; margin-bottom: -1px;">
+                        </div>
                     </div>
-                  </div>
                 </div>
-              
+
                 <!-- Following Tab -->
                 <div class="col pt-2 pb-0 hover-bg" (click)="selectTab('following')">
-                  <div class="d-inline-flex flex-column align-items-center">
-                    <a href="" class="text-decoration-none text-white">Following</a>
-                    <div
-                      class="mt-2"
-                      [ngStyle]="{
+                    <div class="d-inline-flex flex-column align-items-center">
+                        <a href="" class="text-decoration-none text-white">Following</a>
+                        <div class="mt-2" [ngStyle]="{
                         'background-color': selectedTab === 'following' ? '#1d9bf0' : 'transparent'
-                      }"
-                      style="width: 55px; height: 4px; border-radius: 9999px; margin-bottom: -1px;">
+                      }" style="width: 55px; height: 4px; border-radius: 9999px; margin-bottom: -1px;">
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            <div class="row border border-secondary">
+            </div>
+            <div class="row border border-secondary border-start-0 border-end-0">
                 <div class="row pt-2">
                     <p class="fs-3">
                         <i class="bi bi-person-circle"></i>
@@ -66,10 +60,10 @@
 
 
             </div>
-            <div class="row border border-secondary border-top-0 showpost d-flex align-items-center">
+            <div class="row border border-secondary border-top-0 border-start-0  border-end-0 showpost d-flex align-items-center">
                 <a href="" class="text-center text-decoration-none ">Show 70 Post</a>
             </div>
-            <div class="row border border-secondary border-top-0 ">
+            <div class="row border border-secondary border-top-0 border-start-0 border-end-0">
                 <div class="">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="mb-0 d-flex align-items-center gap-1">
@@ -104,7 +98,7 @@
 
                 </div>
             </div>
-            <div class="row border border-secondary border-top-0">
+            <div class="row border border-secondary border-top-0 border-start-0 border-end-0">
                 <div class="">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="mb-0 d-flex align-items-center gap-1">
@@ -141,21 +135,21 @@
             </div>
 
         </div>
-        <div class="col">
+        <div class="col ms-3">
             <div class="row mb-4">
                 <div class="inputbox mt-1">
-                    <input type="email" class="form-control border border-dark-subtle bg-black text-white boderradius"
+                    <input type="email" class="form-control border border-secondary bg-black text-white boderradius"
                         id="exampleInputEmail1" placeholder="Search">
                 </div>
             </div>
 
             <div class="row border border-secondary mb-4 subscribetopremium">
-                <h5 class="mt-1">Subscribe to Premium</h5>
+                <h6 class="mt-1">Subscribe to Premium</h6>
                 <p>Subscribe to unlock new features and if <br> eligible, receive a share of revenue.</p>
-                <button class="btn btn-primary w-25 rounded-pill ms-2 mb-2">Sunscribe</button>
+                <button class="btn btn-primary w-50 rounded-pill ms-2 mb-2 ">Sunscribe</button>
             </div>
 
-            <div class="row border border-secondary p-3 rounded whatshappening">
+            <div class="row border border-secondary p-2 rounded whatshappening">
                 <h5 class="mb-3">What's happening?</h5>
 
                 <div class="d-flex justify-content-between">
@@ -181,10 +175,10 @@
                 <a href="" class="text-decoration-none mt-2">show more</a>
             </div>
 
-            <div class="row border border-secondary p-3 rounded whatshappening mt-4">
+            <div class="row border border-secondary p-2 rounded whatshappening mt-3">
                 <h5 class="mb-3">Who to follow </h5>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-6">
                         <div class="">
                             <h6 class="mb-0 d-flex align-items-center gap-1">
                                 <img src="/images/sunrisers-hyderabad-logo-png_seeklogo-352074.png" alt="" width="30px"
@@ -195,13 +189,13 @@
                             <p class="ms-4 textbottom">&#64;SunRisers</p>
                         </div>
                     </div>
-                    <div class="col  ">
+                    <div class="col  ms-4">
                         <button class="btn btn-light" style="border-radius: 20px;">follow</button>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-6">
                         <div class="">
                             <h6 class="mb-0 d-flex align-items-center gap-1">
                                 <img src="/images/Rohit sharma png image_1696594471_1721824723.webp" alt="" width="30px"
@@ -212,13 +206,13 @@
                             <p class="ms-4 textbottom">&#64;hitman</p>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col ms-4">
                         <button class="btn btn-light" style="border-radius: 20px;">follow</button>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-6">
                         <div class="">
                             <h6 class="mb-0 d-flex align-items-center gap-1">
                                 <img src="/images/logo.png" alt="" width="30px" height="30px">
@@ -228,7 +222,7 @@
                             <p class="ms-4 textbottom">&#64;sunpictures</p>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col ms-4">
                         <button class="btn btn-light" style="border-radius: 20px;">follow</button>
                     </div>
                 </div>

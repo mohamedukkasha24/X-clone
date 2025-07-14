@@ -1,12 +1,14 @@
-.margin_2 {
-  width: 600px;
-  margin-right: 90px;
+.margin_2{
+  
+  width: 550px;
+  /* margin-right: 90px; */
+  margin-left: -130px;
 }
 .inputbox {
   width: 360px;
 }
 .subscribetopremium {
-  width: 360px;
+  width: 300px;
   border-radius: 10px;
 }
 .subscribetopremium h5 {
@@ -16,7 +18,7 @@
   font-size: 14px;
 }
 .whatshappening {
-  width: 360px;
+  width: 300px;
   border-radius: 10px;
 }
 .whatshappening p {
@@ -70,6 +72,7 @@ h6 img {
 }
 .boderradius {
   border-radius: 25px;
+  width: 460px;
 }
 input::placeholder {
   color: white;

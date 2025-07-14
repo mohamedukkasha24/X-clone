@@ -1,28 +1,26 @@
-.margin{              
-    margin-left: 260px;   /*1*/
-    font-size: 21px;
-}
+
 
 .margin_2{
 
-   width: 600px;
-   margin-right: 90px;
+   width: 550px;
+   /* margin-right: 90px; */
+   margin-left: -130px;
 }
 .inputbox{
-    width: 360px;
+    width: 300px;
 }
 .subscribetopremium{
-    width: 360px;
+    width: 300px;
     border-radius: 10px;
 }
-.subscribetopremium h5{
+.subscribetopremium h6{
     font-weight: bold;
 }
 .subscribetopremium p{
-    font-size: 14px;
+    font-size: 13px;
 }
 .whatshappening{
-    width: 360px;
+    width: 300px;
     border-radius: 10px;
 }
 .whatshappening p {

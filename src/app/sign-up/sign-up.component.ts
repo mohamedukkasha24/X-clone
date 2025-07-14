@@ -88,6 +88,7 @@ export class SignUpComponent implements AfterViewInit {
       this.dobYear = '';
 
       // Navigate to verification
+      
       this.router.navigate(['/verification-code']);
     } catch (error: any) {
       alert('Sign Up failed: ' + error.message);
@@ -144,4 +145,5 @@ export class SignUpComponent implements AfterViewInit {
   close() {
     this.closeModal.emit(); // Tell parent to hide modal
   }
+  
 }
